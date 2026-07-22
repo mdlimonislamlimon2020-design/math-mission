@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MATH MISSION — Formula Booklet & Academic Hub</title>
+
+<!-- Tailwind CSS & Lucide Icons -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+
+<!-- MathJax Configuration -->
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+  *{font-family:'Noto Sans Bengali', 'Plus Jakarta Sans', sans-serif;box-sizing:border-box}
+  .bg-grid { background-size: 40px 40px; background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px); }
+  .glass { background: rgba(13, 17, 28, 0.85); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); }
+  .folder-card { background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.3s ease; }
+  .folder-card:hover { transform: translateY(-4px); border-color: rgba(250, 204, 21, 0.5); box-shadow: 0 12px 30px -10px rgba(250, 204, 21, 0.2); }
+  .gtxt { background: linear-gradient(135deg, #facc15 0%, #f97316 50%, #ef4444 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .bp { background: linear-gradient(90deg, #facc15, #f97316, #ef4444); }
+  .mo { opacity: 0; visibility: hidden; transition: all 0.3s ease; }
+  .mo.open { opacity: 1; visibility: visible; }
+  .toast-c { transform: translateY(100px); opacity: 0; transition: all 0.4s ease; }
+  .toast-c.show { transform: translateY(0); opacity: 1; }
+  .ta { background: linear-gradient(135deg, rgba(250,204,21,0.25), rgba(249,115,22,0.25)) !important; color: #facc15 !important; border-color: rgba(250,204,21,0.5) !important; }
+</style>
+</head>
+
+<body class="bg-[#07090e] text-slate-100 overflow-x-hidden bg-grid min-h-screen flex flex-col relative">
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+    <a href="#" onclick="goHome()" class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-2xl bp flex items-center justify-center text-black font-black text-xl">∑</div>
+      <div class="flex flex-col">
+        <span class="text-lg font-black tracking-wider">MATH <span class="gtxt">MISSION</span></span>
+        <span class="text-[9px] text-zinc-400 font-mono tracking-widest uppercase">DCU & NU Unified Portal</span>
+      </div>
+    </a>
+
+    <div class="hidden md:flex items-center gap-6 text-xs font-bold">
+      <a href="#driveSection" onclick="goHome()" class="text-zinc-300 hover:text-yellow-400">📁 ডিজিটাল ড্রাইভ</a>
+      <a href="#formulaSection" class="text-zinc-300 hover:text-yellow-400">📐 Math Formula Booklet</a>
+      <button onclick="openA()" class="px-4 py-2 rounded-xl glass border border-yellow-500/30 text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all">
+        🔒 সিকিউর কন্সোল
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="pt-28 pb-20 px-4 max-w-7xl mx-auto w-full flex-grow">
+
+  <!-- HERO BANNER -->
+  <section class="text-center my-8">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-yellow-500/30 text-xs text-yellow-300 mb-4">
+      <span>🎓</span> <span class="font-bold">Academic Mathematics Repository</span>
+    </div>
+    <h1 class="text-3xl sm:text-5xl font-black tracking-tight mb-3">
+      ঢাকা কেন্দ্রীয় বিশ্ববিদ্যালয় (DCU) ও জাতীয় বিশ্ববিদ্যালয় (NU) <br><span class="gtxt">সমন্বিত ডিজিটাল ম্যাথ ড্যাশবোর্ড</span>
+    </h1>
+    <p class="text-xs sm:text-sm text-zinc-400 max-w-2xl mx-auto leading-relaxed">
+      বি.এসসি (অনার্স) ১ম বর্ষ থেকে ৪র্থ বর্ষ এবং এম.এসসি (মাস্টার্স) গণিত বিভাগের সম্পূর্ণ সিলেবাস, নোটস এবং বিষয়ভিত্তিক অল-ইন-ওয়ান ফর্মুলা ব্যাংক।
+    </p>
+  </section>
+
+  <!-- SECTION 1: DRIVE SYSTEM -->
+  <section id="driveSection" class="mb-20">
+    <div class="glass p-4 rounded-2xl border border-white/10 mb-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2 text-xs sm:text-sm font-semibold" id="breadCrumb"></div>
+      
+      <div class="flex items-center gap-2">
+        <span class="text-xs text-zinc-400">বিশ্ববিদ্যালয় ফিল্টার:</span>
+        <select id="uniFilter" onchange="changeUni(this.value)" class="bg-[#07090e] border border-white/10 px-3 py-1.5 rounded-xl text-xs text-yellow-400 focus:outline-none">
+          <option value="all">🌐 উভয় (DCU + NU)</option>
+          <option value="nu">🟢 জাতীয় বিশ্ববিদ্যালয় (NU)</option>
+          <option value="dcu">🔵 ঢাকা কেন্দ্রীয় বিশ্ববিদ্যালয়  (DCU)</option>
+                </select>
+      </div>
+    </div>
+
+    <div id="driveContainer"></div>
+  </section>
+
+  <!-- SECTION 2: GYAAN SUTRA FORMULA HUB -->
+  <section id="formulaSection" class="pt-12 border-t border-white/10">
+    <div class="text-center mb-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-400/10 border border-yellow-500/30 text-xs text-yellow-400 mb-2 font-bold">
+        <span>📖</span> MATHEMATICS FORMULA BOOKLET 
+      </div>
+      <h2 class="text-3xl font-black">বিশ্বের যাবতীয় <span class="gtxt">গাণিতিক সূত্রাবলী ও নিয়মাবলী</span></h2>
+      <p class="text-xs text-zinc-400 mt-1">ক্যালকুলাস, জ্যামিতি, বীজগণিত, ভেক্টর, ত্রিকোণমিতি এবং পরিসংখ্যানের সব চ্যাপ্টারের মূল সূত্র</p>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-2 mb-8" id="formulaTabs"></div>
+    <div id="formulaContainer" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </section>
+
+</main>
+
+<footer class="border-t border-white/10 py-8 bg-[#07090e] text-center text-xs text-zinc-500">
+  © ২০২৬ MATH MISSION
+</footer>
+
+<!-- ADMIN MODAL -->
+<div id="aModal" class="mo fixed inset-0 z-[200] flex items-center justify-center p-4">
+  <div class="absolute inset-0 bg-black/80 backdrop-blur-md" onclick="closeA()"></div>
+  <div class="relative w-full max-w-lg glass rounded-3xl p-6 border border-white/10 z-10 max-h-[90vh] overflow-y-auto">
+    
+    <!-- LOGIN SCREEN -->
+    <div id="logScr">
+      <h3 class="text-lg font-bold text-white text-center mb-4">🔐 সিকিউর ক্লাউড অ্যাক্সেস</h3>
+      <div class="space-y-3">
+        <input type="email" id="emailInp" placeholder="ইমেইল..." class="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-xs text-white">
+        <input type="password" id="passInp" placeholder="পাসওয়ার্ড..." class="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-xs text-white">
+        <button onclick="doLoginDemo()" class="w-full py-3 bp text-black font-bold rounded-xl text-xs">লগইন করুন</button>
+      </div>
+    </div>
+
+    <!-- DASHBOARD SCREEN -->
+    <div id="dshScr" class="hidden space-y-4">
+      <div class="flex items-center justify-between border-b border-white/10 pb-3">
+        <span class="font-bold text-xs text-yellow-400">⚙️ ক্লাউড রিসোর্স ম্যানেজার</span>
+        <div class="flex gap-2">
+          <button onclick="toggleSettings()" class="px-2.5 py-1 rounded-xl bg-yellow-500/20 text-yellow-400 text-xs">⚙️ সেটিংস</button>
+          <button onclick="doLogoutDemo()" class="px-2.5 py-1 rounded-xl bg-red-500/20 text-red-400 text-xs">লগআউট</button>
+        </div>
+      </div>
+
+      <!-- CREDENTIALS CHANGE SECTION -->
+      <div id="settingsBox" class="hidden p-3 bg-white/5 border border-white/10 rounded-2xl space-y-2">
+        <p class="text-xs font-bold text-yellow-400">🔑 অ্যাডমিন ইমেইল ও পাসওয়ার্ড পরিবর্তন করুন:</p>
+        <input type="email" id="newEmail" placeholder="নতুন ইমেইল..." class="w-full px-3 py-1.5 bg-white/5 border border-white/10 rounded-xl text-xs text-white">
+        <input type="password" id="newPass" placeholder="নতুন পাসওয়ার্ড..." class="w-full px-3 py-1.5 bg-white/5 border border-white/10 rounded-xl text-xs text-white">
+        <button onclick="saveCredentials()" class="w-full py-1.5 bg-yellow-400 text-black font-bold rounded-xl text-xs">আপডেট সেভ করুন</button>
+      </div>
+      
+      <!-- ADD FILE FORM -->
+      <div class="space-y-3">
+        <input type="text" id="fN" placeholder="ফাইলের নাম *" class="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-xl text-xs text-white">
+        <input type="text" id="fW" placeholder="লেখক/রাইটারের নাম (যেমন: Howard Anton, তিতাস)" class="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-xl text-xs text-white">
+        
+        <div class="grid grid-cols-2 gap-2">
+          <select id="fC" class="bg-[#07090e] border border-white/10 p-2 rounded-xl text-xs text-white">
+          
+            <option value="syllabus">📋 সিলেবাস</option>
+            <option value="question">📝 প্রশ্ন ব্যাংক</option>
+            <option value="book">📖 রেফারেন্স বই</option>
+            <option value="formula">📐 সূত্রপত্র </option>
+            <option value="video">🎥 ভিডিও লেকচার</option>
+            <option value="note">📎 লেকচার নোট</option>
+            <option value="assignment">📂 অ্যাসাইনমেন্ট</option>
+            <option value="solution">✅ সমাধান</option>
+            <option value="model">📄 মডেল টেস্ট</option>
+          </select>
+          <select id="fU" class="bg-[#07090e] border border-white/10 p-2 rounded-xl text-xs text-white">
+            <option value="all">🌐 উভয় (DCU + NU)</option>
+            <option value="dcu">🔵 ঢাকা কেন্দ্রীয় বিশ্ববিদ্যালয় (DCU)</option>
+            <option value="nu">🟢 জাতীয় বিশ্ববিদ্যালয় (NU)</option>
+          </select>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2">
+          <select id="fY" onchange="updateAdminSubjectDropdown()" class="bg-[#07090e] border border-white/10 p-2 rounded-xl text-xs text-white">
+            <option value="1">১ম বর্ষ</option>
+            <option value="2">২য় বর্ষ</option>
+            <option value="3">৩য় বর্ষ</option>
+            <option value="4">৪র্থ বর্ষ</option>
+            <option value="masters">মাস্টার্স (M.Sc)</option>
+          </select>
+          <select id="fSub" class="bg-[#07090e] border border-white/10 p-2 rounded-xl text-xs text-white"></select>
+        </div>
+
+        <input type="url" id="fL" placeholder="Google Drive Direct Link *" class="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-xl text-xs text-white">
+        <textarea id="fD" placeholder="বিবরণ..." class="w-full px-3 py-2 bg-white/5 border border-white/10 rounded-xl text-xs text-white resize-none"></textarea>
+        <button onclick="addLocalPdf()" class="w-full py-2.5 bp text-black font-extrabold rounded-xl text-xs">ফাইল যুক্ত করুন</button>
+      </div>
+
+      <div id="aList" class="max-h-36 overflow-y-auto space-y-2 pt-2 border-t border-white/10"></div>
+    </div>
+  </div>
+</div>
+
+<div id="toastD" class="toast-c fixed bottom-6 right-6 z-[300] glass rounded-2xl p-4 border border-emerald-500/40">
+  <p class="text-xs font-medium text-white" id="tMsg"></p>
+</div>
+
+<script>
+// ADMIN CREDENTIALS STATE
+var adminCreds = {
+  email: "admin@mathmission.com",
+  pass: "admin123"
+};
+
+// 1. SUBJECT ARCHITECTURE
+var SUBJECTS = {
+  1: ["Calculus I", "Linear Algebra", "Analytic & Vector Geometry", "Algebra & Trigonometry", "Physics-I"],
+  2: ["Calculus II", "Ordinary Differential Equations", "Real Analysis I", "Abstract Algebra", "Fortran & Numerical Programming"],
+  3: ["Complex Analysis", "Real Analysis II", "Classical Mechanics", "Topology", "Numerical Analysis", "Mathematical Methods"],
+  4: ["Partial Differential Equations", "Functional Analysis", "Differential Geometry", "Fluid Dynamics", "Tensor Analysis", "Applied Optimization"],
+  "masters": ["Advanced Functional Analysis", "Fluid Dynamics II", "Measure Theory", "Quantum Mechanics", "Graph Theory", "Mathematical Biology"]
+};
+
+// 2. COMPLETE ALL 24 FORMULA CHAPTERS
+var FORMULAS = {
+  straight_line: {
+  title: "1. Straight Line",
+  data: [
+    { t: "Distance Formula", f: "$$d = \\sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}$$" },
+    { t: "Section Formula (Internal / External)", f: "$$x = \\frac{mx_2 \\pm nx_1}{m \\pm n}, \\quad y = \\frac{my_2 \\pm ny_1}{m \\pm n}$$" },
+    { t: "Centroid", f: "$$G\\left(\\dfrac{x_1+x_2+x_3}{3},\\;\\dfrac{y_1+y_2+y_3}{3}\\right)$$" },
+    { t: "Incentre", f: "$$I\\left(\\dfrac{ax_1+bx_2+cx_3}{a+b+c},\\;\\dfrac{ay_1+by_2+cy_3}{a+b+c}\\right)$$" },
+    { t: "Excentre (opposite to vertex A)", f: "$$I_1\\left(\\dfrac{-ax_1+bx_2+cx_3}{-a+b+c},\\;\\dfrac{-ay_1+by_2+cy_3}{-a+b+c}\\right)$$" },
+    { t: "Area of Triangle", f: "$$\\Delta = \\frac{1}{2}\\begin{vmatrix} x_1 & y_1 & 1 \\\\ x_2 & y_2 & 1 \\\\ x_3 & y_3 & 1 \\end{vmatrix}$$" },
+    { t: "Slope of a Line", f: "$$m = \\frac{y_2 - y_1}{x_2 - x_1}$$" },
+    { t: "Condition of Collinearity", f: "$$\\begin{vmatrix} x_1 & y_1 & 1 \\\\ x_2 & y_2 & 1 \\\\ x_3 & y_3 & 1 \\end{vmatrix} = 0$$" },
+    { t: "Angle Between Two Lines", f: "$$\\tan\\theta = \\left|\\frac{m_1 - m_2}{1 + m_1 m_2}\\right|$$" },
+    { t: "Parallel Lines Condition", f: "$$\\frac{a}{a'} = \\frac{b}{b'} \\neq \\frac{c}{c'}$$" },
+    { t: "Distance Between Parallel Lines", f: "$$d = \\frac{|c_1 - c_2|}{\\sqrt{a^2 + b^2}}$$" },
+    { t: "Perpendicular Lines Condition", f: "$$aa' + bb' = 0$$" },
+    { t: "Perpendicular Distance (Point to Line)", f: "$$p = \\left|\\frac{ax_1 + by_1 + c}{\\sqrt{a^2+b^2}}\\right|$$" },
+    { t: "Reflection of a Point in a Line", f: "$$x' = x_1 - \\frac{2a(ax_1+by_1+c)}{a^2+b^2}, \\quad y' = y_1 - \\frac{2b(ax_1+by_1+c)}{a^2+b^2}$$" },
+    { t: "Foot of the Perpendicular", f: "$$\\frac{x'-x_1}{a} = \\frac{y'-y_1}{b} = -\\frac{ax_1+by_1+c}{a^2+b^2}$$" },
+    { t: "Angle Bisectors of Two Lines", f: "$$\\frac{ax+by+c}{\\sqrt{a^2+b^2}} = \\pm \\frac{a'x+b'y+c'}{\\sqrt{a'^2+b'^2}}$$" },
+    { t: "Condition of Concurrency (3 Lines)", f: "$$\\begin{vmatrix} a_1 & b_1 & c_1 \\\\ a_2 & b_2 & c_2 \\\\ a_3 & b_3 & c_3 \\end{vmatrix} = 0$$" },
+    { t: "Pair of Straight Lines through Origin", f: "$$ax^2 + 2hxy + by^2 = 0$$" },
+    { t: "Acute Angle Between Pair of Lines", f: "$$\\tan\\theta = \\left|\\frac{2\\sqrt{h^2 - ab}}{a + b}\\right|$$" }
+  ]
+},
+  circle: {
+  title: "2. Circle",
+  data: [
+    { t: "General Equation of Circle", f: "$$x^2 + y^2 + 2gx + 2fy + c = 0$$" },
+    { t: "Intercepts on Axes", f: "$$\\text{x-intercept} = 2\\sqrt{g^2 - c}, \\quad \\text{y-intercept} = 2\\sqrt{f^2 - c}$$" },
+    { t: "Parametric Equations", f: "$$x = h + r\\cos\\theta, \\quad y = k + r\\sin\\theta$$" },
+    { t: "Tangent — Slope Form", f: "$$y = mx \\pm a\\sqrt{1+m^2}$$" },
+    { t: "Tangent — Point Form (T = 0)", f: "$$xx_1 + yy_1 + g(x+x_1) + f(y+y_1) + c = 0$$" },
+    { t: "Tangent — Parametric Form", f: "$$x\\cos\\alpha + y\\sin\\alpha = a$$" },
+    { t: "Pair of Tangents from a Point", f: "$$SS_1 = T^2$$" },
+    { t: "Length of Tangent from (x₁,y₁)", f: "$$L = \\sqrt{S_1}$$" },
+    { t: "Director Circle", f: "$$x^2 + y^2 = 2a^2 \\quad \\text{(for } x^2+y^2=a^2\\text{)}$$" },
+    { t: "Chord of Contact (T = 0)", f: "$$xx_1 + yy_1 = a^2$$" },
+    { t: "Length of Chord of Contact", f: "$$\\text{Length} = \\frac{2LR\\sqrt{L^2+R^2}}{L^2+R^2}$$" },
+    { t: "Area: Pair of Tangents & Chord of Contact", f: "$$\\text{Area} = \\frac{LR^3}{L^2+R^2}$$" },
+    { t: "Angle Between Pair of Tangents", f: "$$\\tan\\theta = \\frac{2LR}{L^2 - R^2}$$" },
+    { t: "Circle Circumscribing △PT₁T₂", f: "$$(x-x_1)(x+g) + (y-y_1)(y+f) = 0$$" },
+    { t: "Orthogonality of Two Circles", f: "$$2g_1g_2 + 2f_1f_2 = c_1 + c_2$$" },
+    { t: "Radical Axis", f: "$$S_1 - S_2 = 0 \\implies 2(g_1-g_2)x + 2(f_1-f_2)y + (c_1-c_2) = 0$$" },
+    { t: "Family of Circles", f: "$$S_1 + \\lambda S_2 = 0, \\quad S + \\lambda L = 0$$" }
+  ]
+},
+  parabola: {
+  title: "3. Parabola",
+  data: [
+    { t: "Standard Parabola: y² = 4ax", f: "$$\\text{Focus }(a,0),\\; \\text{Directrix } x=-a,\\; \\text{Axis } y=0,\\; \\text{L.R.}=4a$$" },
+    { t: "Ends of Latus Rectum", f: "$$L(a,\\, 2a), \\quad L'(a,\\, -2a)$$" },
+    { t: "Parametric Representation", f: "$$x = at^2, \\quad y = 2at$$" },
+    { t: "Tangent — Slope Form", f: "$$y = mx + \\frac{a}{m} \\quad (m \\neq 0)$$" },
+    { t: "Tangent — Parametric Form", f: "$$ty = x + at^2$$" },
+    { t: "Tangent — Point Form (T = 0)", f: "$$yy_1 = 2a(x + x_1)$$" },
+    { t: "Normal — Point Form", f: "$$y - y_1 = -\\frac{y_1}{2a}(x - x_1)$$" },
+    { t: "Normal — Slope Form", f: "$$y = mx - 2am - am^3 \\quad \\text{at } (am^2,\\, -2am)$$" },
+    { t: "Normal — Parametric Form", f: "$$y + tx = 2at + at^3 \\quad \\text{at } (at^2,\\, 2at)$$" }
+  ]
+},
+  ellipse: {
+  title: "4. Ellipse",
+  data: [
+    { t: "Standard Equation (a > b)", f: "$$\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1, \\quad b^2 = a^2(1-e^2)$$" },
+    { t: "Eccentricity, Foci, Directrices", f: "$$e = \\sqrt{1 - \\frac{b^2}{a^2}}, \\quad \\text{Foci }(\\pm ae,\\, 0), \\quad x = \\pm \\frac{a}{e}$$" },
+    { t: "Axes & Latus Rectum", f: "$$\\text{Major axis} = 2a,\\; \\text{Minor axis} = 2b,\\; \\text{L.R.} = \\frac{2b^2}{a}$$" },
+    { t: "Vertices", f: "$$A'(-a,\\, 0), \\quad A(a,\\, 0)$$" },
+    { t: "Auxiliary Circle", f: "$$x^2 + y^2 = a^2$$" },
+    { t: "Parametric Representation", f: "$$x = a\\cos\\theta, \\quad y = b\\sin\\theta$$" },
+    { t: "Position of Point w.r.t. Ellipse", f: "$$\\frac{x_1^2}{a^2}+\\frac{y_1^2}{b^2}-1 \\begin{cases} >0 & \\text{Outside} \\\\ =0 & \\text{On} \\\\ <0 & \\text{Inside} \\end{cases}$$" },
+    { t: "Line Meets Ellipse", f: "$$y=mx+c \\implies c^2 \\begin{cases} < a^2m^2+b^2 & \\text{2 real pts} \\\\ = a^2m^2+b^2 & \\text{1 pt (tangent)} \\\\ > a^2m^2+b^2 & \\text{imaginary} \\end{cases}$$" },
+    { t: "Tangent — Slope Form", f: "$$y = mx \\pm \\sqrt{a^2m^2 + b^2}$$" },
+    { t: "Tangent — Point Form", f: "$$\\frac{xx_1}{a^2} + \\frac{yy_1}{b^2} = 1$$" },
+    { t: "Tangent — Parametric Form", f: "$$\\frac{x\\cos\\theta}{a} + \\frac{y\\sin\\theta}{b} = 1$$" },
+    { t: "Normal — Point Form", f: "$$\\frac{a^2x}{x_1} - \\frac{b^2y}{y_1} = a^2 - b^2$$" },
+    { t: "Normal — Parametric Form", f: "$$ax\\sec\\theta - by\\operatorname{cosec}\\theta = a^2 - b^2$$" },
+    { t: "Normal — Slope Form", f: "$$y = mx - \\frac{(a^2-b^2)m}{\\sqrt{a^2 + b^2m^2}}$$" },
+    { t: "Director Circle", f: "$$x^2 + y^2 = a^2 + b^2$$" }
+  ]
+},
+hyperbola: {
+  title: "5. Hyperbola",
+  data: [
+    { t: "Standard Equation", f: "$$\\frac{x^2}{a^2}-\\frac{y^2}{b^2}=1,\\quad b^2=a^2(e^2-1)$$" },
+    { t: "Foci, Directrices, Vertices, L.R.", f: "$$\\text{Foci }(\\pm ae,0),\\quad x=\\pm\\frac{a}{e},\\quad V(\\pm a,0),\\quad \\text{L.R.}=\\frac{2b^2}{a}$$" },
+    { t: "Conjugate Hyperbola", f: "$$\\frac{x^2}{a^2}-\\frac{y^2}{b^2}=1\\quad\\text{and}\\quad\\frac{y^2}{b^2}-\\frac{x^2}{a^2}=1\\quad\\text{are conjugate}$$" },
+    { t: "Auxiliary Circle & Parametric", f: "$$x^2+y^2=a^2,\\quad x=a\\sec\\theta,\\quad y=b\\tan\\theta$$" },
+    { t: "Position of Point w.r.t. Hyperbola", f: "$$\\frac{x_1^2}{a^2}-\\frac{y_1^2}{b^2}-1\\begin{cases}<0,&\\text{Inside}\\\\=0,&\\text{On}\\\\>0,&\\text{Outside}\\end{cases}$$" },
+    { t: "Tangent — Slope Form", f: "$$y=mx\\pm\\sqrt{a^2m^2-b^2}$$" },
+    { t: "Tangent — Point Form", f: "$$\\frac{xx_1}{a^2}-\\frac{yy_1}{b^2}=1$$" },
+    { t: "Tangent — Parametric Form", f: "$$\\frac{x\\sec\\theta}{a}-\\frac{y\\tan\\theta}{b}=1$$" },
+    { t: "Normal — Point Form", f: "$$\\frac{a^2x}{x_1}+\\frac{b^2y}{y_1}=a^2+b^2$$" },
+    { t: "Normal — Parametric Form", f: "$$\\frac{ax}{\\sec\\theta}+\\frac{by}{\\tan\\theta}=a^2+b^2$$" },
+    { t: "Normal — Slope Form", f: "$$y=mx\\pm\\frac{(a^2+b^2)m}{\\sqrt{a^2-b^2m^2}}$$" },
+    { t: "Asymptotes", f: "$$y=\\pm\\frac{b}{a}x,\\quad\\text{Pair: }\\frac{x^2}{a^2}-\\frac{y^2}{b^2}=0$$" },
+    { t: "Rectangular Hyperbola: \\(xy=c^2\\)", f: "$$e=\\sqrt{2},\\quad\\text{Asymptotes: }x=0,\\ y=0,\\quad\\text{L.R.}=2\\sqrt{2}\\,c$$" },
+    { t: "Rect. Hyperbola — Parametric", f: "$$x=ct,\\quad y=\\frac{c}{t},\\quad t\\in\\mathbb{R}\\setminus\\{0\\}$$" },
+    { t: "Rect. Hyperbola — Tangent at \\((x_1,y_1)\\) & \\((t)\\)", f: "$$\\frac{x}{x_1}+\\frac{y}{y_1}=2,\\quad\\frac{x}{t}+ty=2c$$" },
+    { t: "Rect. Hyperbola — Normal at \\((t)\\)", f: "$$xt^3-yt=c(t^4-1)$$" },
+    { t: "Rect. Hyperbola — Chord with Mid-point \\((h,k)\\)", f: "$$kx+hy=2hk$$" }
+  ]
+},
+  limit: {
+  title: "6. Limit of Function",
+  data: [
+    { t: "Existence of Limit", f: "$$\\lim_{x \\to a}f(x) \\text{ exists } \\iff \\lim_{h \\to 0^+}f(a-h) = \\lim_{h \\to 0^+}f(a+h) = M$$" },
+    { t: "Indeterminate Forms", f: "$$\\frac{0}{0},\\; \\frac{\\infty}{\\infty},\\; 0 \\times \\infty,\\; \\infty-\\infty,\\; \\infty^0,\\; 0^0,\\; 1^\\infty$$" },
+    { t: "Standard Limit: sin x / x", f: "$$\\lim_{x \\to 0}\\frac{\\sin x}{x} = 1, \\quad \\lim_{x \\to 0}\\frac{\\tan x}{x} = 1$$" },
+    { t: "Standard Limit: Inverse Trig", f: "$$\\lim_{x \\to 0}\\frac{\\sin^{-1}x}{x} = 1, \\quad \\lim_{x \\to 0}\\frac{\\tan^{-1}x}{x} = 1$$" },
+    { t: "Standard Limit: Exponential", f: "$$\\lim_{x \\to 0}\\frac{e^x-1}{x} = 1, \\quad \\lim_{x \\to 0}\\frac{a^x-1}{x} = \\ln a\\;(a>0)$$" },
+    { t: "Standard Limit: Algebraic", f: "$$\\lim_{x \\to 0}\\frac{(1+x)^n-1}{x} = n, \\quad \\lim_{x \\to a}\\frac{x^n-a^n}{x-a} = na^{n-1}$$" },
+    { t: "Euler's Limit", f: "$$\\lim_{x \\to 0}(1+x)^{1/x} = e, \\quad \\lim_{x \\to \\infty}\\left(1+\\frac{1}{x}\\right)^x = e$$" },
+    { t: "Expansion: Exponential", f: "$$e^x = 1 + x + \\frac{x^2}{2!} + \\frac{x^3}{3!} + \\frac{x^4}{4!}+\\cdots$$" },
+    { t: "Expansion: Logarithmic", f: "$$\\ln(1+x) = x - \\frac{x^2}{2} + \\frac{x^3}{3} - \\frac{x^4}{4}+\\cdots \\quad (|x|<1)$$" },
+    { t: "Expansion: sin x & cos x", f: "$$\\sin x = x - \\frac{x^3}{3!} + \\frac{x^5}{5!} - \\frac{x^7}{7!}+\\cdots$$ $$\\cos x = 1 - \\frac{x^2}{2!} + \\frac{x^4}{4!} - \\frac{x^6}{6!}+\\cdots$$" },
+    { t: "Expansion: tan x", f: "$$\\tan x = x + \\frac{x^3}{3} + \\frac{2x^5}{15}+\\cdots$$" },
+    { t: "Expansion: (1+x)ⁿ", f: "$$(1+x)^n = 1+nx+\\frac{n(n-1)}{2!}x^2+\\frac{n(n-1)(n-2)}{3!}x^3+\\cdots \\quad (|x|<1)$$" },
+    { t: "Limit of Form 1^∞", f: "$$\\lim_{x \\to a}[f(x)]^{g(x)} = e^{\\lim_{x \\to a}[f(x)-1]\\cdot g(x)}$$" },
+    { t: "Sandwich (Squeeze) Theorem", f: "$$f(x) \\le g(x) \\le h(x)\\;\\forall x,\\; \\lim f(x)=\\lim h(x)=\\ell \\implies \\lim g(x)=\\ell$$" }
+  ]
+},
+
+differentiation: {
+  title: "7. Differentiation",
+  data: [
+    { t: "Power & Exponential", f: "$$\\frac{d}{dx}(x^n)=nx^{n-1}, \\quad \\frac{d}{dx}(a^x)=a^x\\ln a$$" },
+    { t: "Logarithmic", f: "$$\\frac{d}{dx}(\\ln|x|)=\\frac{1}{x}, \\quad \\frac{d}{dx}(\\log_a x)=\\frac{1}{x\\ln a}$$" },
+    { t: "Trigonometric (sin, cos, tan)", f: "$$\\frac{d}{dx}(\\sin x)=\\cos x,\\; \\frac{d}{dx}(\\cos x)=-\\sin x,\\; \\frac{d}{dx}(\\tan x)=\\sec^2 x$$" },
+    { t: "Trigonometric (sec, cosec, cot)", f: "$$\\frac{d}{dx}(\\sec x)=\\sec x\\tan x,\\; \\frac{d}{dx}(\\operatorname{cosec} x)=-\\cosec x\\cot x,\\; \\frac{d}{dx}(\\cot x)=-\\cosec^2 x$$" },
+    { t: "Sum, Scalar, Product, Quotient", f: "$$(f\\pm g)'=f'\\pm g', \\quad (kf)'=kf'$$ $$(fg)'=f'g+fg', \\quad \\left(\\frac{f}{g}\\right)'=\\frac{f'g-fg'}{g^2}$$" },
+    { t: "Chain Rule", f: "$$\\frac{d}{dx}\\big[f(g(x))\\big] = f'(g(x))\\cdot g'(x)$$" },
+    { t: "Inverse Trig: sin⁻¹, cos⁻¹", f: "$$\\frac{d}{dx}(\\sin^{-1}x)=\\frac{1}{\\sqrt{1-x^2}}, \\quad \\frac{d}{dx}(\\cos^{-1}x)=\\frac{-1}{\\sqrt{1-x^2}}$$" },
+    { t: "Inverse Trig: tan⁻¹, cot⁻¹", f: "$$\\frac{d}{dx}(\\tan^{-1}x)=\\frac{1}{1+x^2}, \\quad \\frac{d}{dx}(\\cot^{-1}x)=\\frac{-1}{1+x^2}$$" },
+    { t: "Inverse Trig: sec⁻¹, cosec⁻¹", f: "$$\\frac{d}{dx}(\\sec^{-1}x)=\\frac{1}{|x|\\sqrt{x^2-1}}, \\quad \\frac{d}{dx}(\\operatorname{cosec}^{-1}x)=\\frac{-1}{|x|\\sqrt{x^2-1}}$$" },
+    { t: "Substitution: √(a²+x²)", f: "$$x = a\\tan\\theta, \\quad -\\frac{\\pi}{2}<\\theta<\\frac{\\pi}{2}$$" },
+    { t: "Substitution: √(a²−x²)", f: "$$x = a\\sin\\theta, \\quad -\\frac{\\pi}{2}\\le\\theta\\le\\frac{\\pi}{2}$$" },
+    { t: "Substitution: √(x²−a²)", f: "$$x = a\\sec\\theta, \\quad \\theta\\in[0,\\pi],\\;\\theta\\neq\\frac{\\pi}{2}$$" },
+    { t: "Substitution: (a−x)/(a+x)", f: "$$x = a\\cos\\theta, \\quad \\theta\\in(0,\\pi]$$" },
+    { t: "Parametric Differentiation", f: "$$\\frac{dy}{dx} = \\frac{dy/d\\theta}{dx/d\\theta}$$" },
+    { t: "Derivative of y w.r.t. z", f: "$$\\frac{dy}{dz} = \\frac{dy/dx}{dz/dx} = \\frac{f'(x)}{g'(x)}$$" },
+    { t: "Logarithmic Differentiation", f: "$$F(x)=\\frac{f\\cdot g\\cdot h}{l\\cdot m\\cdot n} \\implies F'(x)=F(x)\\left[\\frac{f'}{f}+\\frac{g'}{g}+\\frac{h'}{h}-\\frac{l'}{l}-\\frac{m'}{m}-\\frac{n'}{n}\\right]$$" }
+  ]
+},
+
+aod: {
+  title: "8. Application of Derivatives",
+  data: [
+    { t: "Equation of Tangent at (x₁,y₁)", f: "$$y - y_1 = f'(x_1)(x - x_1)$$" },
+    { t: "Equation of Normal at (x₁,y₁)", f: "$$y - y_1 = -\\frac{1}{f'(x_1)}(x - x_1)$$" },
+    { t: "Tangent from External Point (a,b)", f: "$$f'(h) = \\frac{f(h)-b}{h-a}, \\quad y-b = \\frac{f(h)-b}{h-a}(x-a)$$" },
+    { t: "Length of Tangent (PT)", f: "$$PT = |y_1|\\sqrt{1+\\frac{1}{m^2}} = \\frac{|y_1|\\sqrt{1+m^2}}{|m|}$$" },
+    { t: "Length of Normal (PN)", f: "$$PN = |y_1|\\sqrt{1+m^2}$$" },
+    { t: "Subtangent & Subnormal", f: "$$TM = \\left|\\frac{y_1}{m}\\right|, \\quad MN = |y_1 \\cdot m|$$" },
+    { t: "Angle Between Two Curves", f: "$$\\tan\\theta = \\left|\\frac{m_1-m_2}{1+m_1 m_2}\\right|$$" },
+    { t: "Shortest Distance Between Curves", f: "$$\\text{Always along their common normal (wherever defined)}$$" },
+    { t: "Rolle's Theorem", f: "$$f(a)=f(b),\\; f \\text{ continuous on }[a,b],\\; f \\text{ derivable on }(a,b) \\implies \\exists\\, c\\in(a,b): f'(c)=0$$" },
+    { t: "Lagrange's Mean Value Theorem", f: "$$f'(c) = \\frac{f(b)-f(a)}{b-a}, \\quad c\\in(a,b)$$" },
+    { t: "Mensuration: Cuboid & Cube", f: "$$V_{cuboid}=\\ell bh,\\; SA=2(\\ell b+bh+h\\ell)$$ $$V_{cube}=a^3,\\; SA=6a^2$$" },
+    { t: "Mensuration: Cone", f: "$$V = \\frac{1}{3}\\pi r^2 h, \\quad CSA = \\pi r\\ell \\quad (\\ell=\\text{slant height})$$" },
+    { t: "Mensuration: Cylinder", f: "$$CSA = 2\\pi rh, \\quad TSA = 2\\pi rh + 2\\pi r^2$$" },
+    { t: "Mensuration: Sphere", f: "$$V = \\frac{4}{3}\\pi r^3, \\quad SA = 4\\pi r^2, \\quad \\text{Sector Area}=\\frac{1}{2}r^2\\theta$$" },
+    { t: "Mensuration: Prism & Pyramid", f: "$$V_{prism}=(\\text{base area})\\times h, \\quad LSA=(\\text{perimeter})\\times h$$ $$V_{pyramid}=\\frac{1}{3}(\\text{base area})\\times h, \\quad CSA=\\frac{1}{2}(\\text{perimeter})\\times\\ell$$" }
+  ]
+},
+
+indef_int: {
+  title: "9. Indefinite Integration",
+  data: [
+    { t: "Definition", f: "$$\\int f(x)\\,dx = g(x)+c \\iff \\frac{d}{dx}\\{g(x)+c\\} = f(x)$$" },
+    { t: "∫(ax+b)ⁿ dx", f: "$$\\int (ax+b)^n\\,dx = \\frac{(ax+b)^{n+1}}{a(n+1)}+c, \\quad n\\neq -1$$" },
+    { t: "∫ dx/(ax+b) & ∫ e^(ax+b) dx", f: "$$\\int \\frac{dx}{ax+b}=\\frac{1}{a}\\ln(ax+b)+c, \\quad \\int e^{ax+b}dx=\\frac{1}{a}e^{ax+b}+c$$" },
+    { t: "∫ a^(px+q) dx", f: "$$\\int a^{px+q}dx = \\frac{a^{px+q}}{p\\ln a}+c, \\quad a>0$$" },
+    { t: "∫ sin, cos, tan, cot (ax+b)", f: "$$\\int\\sin(ax+b)=-\\frac{\\cos(ax+b)}{a}+c, \\quad \\int\\cos(ax+b)=\\frac{\\sin(ax+b)}{a}+c$$ $$\\int\\tan(ax+b)=\\frac{1}{a}\\ln|\\sec(ax+b)|+c, \\quad \\int\\cot(ax+b)=\\frac{1}{a}\\ln|\\sin(ax+b)|+c$$" },
+    { t: "∫ sec², cosec² (ax+b)", f: "$$\\int\\sec^2(ax+b)=\\frac{\\tan(ax+b)}{a}+c, \\quad \\int\\operatorname{cosec}^2(ax+b)=-\\frac{\\cot(ax+b)}{a}+c$$" },
+    { t: "∫ sec x dx & ∫ operatorname{cosec} x dx", f: "$$\\int\\sec x\\,dx = \\ln|\\sec x+\\tan x|+c = \\ln\\left|\\tan\\left(\\frac{x}{2}+\\frac{\\pi}{4}\\right)\\right|+c$$ $$\\int\\operatorname{cosec} x\\,dx = \\ln|\\operatorname{cosec} x-\\cot x|+c = \\ln\\left|\\tan\\frac{x}{2}\\right|+c$$" },
+    { t: "∫ dx/√(a²−x²) & ∫ dx/(a²+x²)", f: "$$\\int\\frac{dx}{\\sqrt{a^2-x^2}} = \\sin^{-1}\\frac{x}{a}+c$$ $$\\int\\frac{dx}{a^2+x^2} = \\frac{1}{a}\\tan^{-1}\\frac{x}{a}+c$$" },
+    { t: "∫ dx/|x|√(x²−a²)", f: "$$\\int\\frac{dx}{|x|\\sqrt{x^2-a^2}} = \\frac{1}{a}\\sec^{-1}\\frac{x}{a}+c$$" },
+    { t: "∫ dx/√(x²+a²) & ∫ dx/√(x²−a²)", f: "$$\\int\\frac{dx}{\\sqrt{x^2+a^2}} = \\ln\\left|x+\\sqrt{x^2+a^2}\\right|+c$$ $$\\int\\frac{dx}{\\sqrt{x^2-a^2}} = \\ln\\left|x+\\sqrt{x^2-a^2}\\right|+c$$" },
+    { t: "∫ dx/(a²−x²) & ∫ dx/(x²−a²)", f: "$$\\int\\frac{dx}{a^2-x^2} = \\frac{1}{2a}\\ln\\left|\\frac{a+x}{a-x}\\right|+c$$ $$\\int\\frac{dx}{x^2-a^2} = \\frac{1}{2a}\\ln\\left|\\frac{x-a}{x+a}\\right|+c$$" },
+    { t: "∫ √(a²−x²) dx", f: "$$\\int\\sqrt{a^2-x^2}\\,dx = \\frac{x}{2}\\sqrt{a^2-x^2}+\\frac{a^2}{2}\\sin^{-1}\\frac{x}{a}+c$$" },
+    { t: "∫ √(x²+a²) dx", f: "$$\\int\\sqrt{x^2+a^2}\\,dx = \\frac{x}{2}\\sqrt{x^2+a^2}+\\frac{a^2}{2}\\ln\\left(x+\\sqrt{x^2+a^2}\\right)+c$$" },
+    { t: "∫ √(x²−a²) dx", f: "$$\\int\\sqrt{x^2-a^2}\\,dx = \\frac{x}{2}\\sqrt{x^2-a^2}-\\frac{a^2}{2}\\ln\\left(x+\\sqrt{x^2-a^2}\\right)+c$$" },
+    { t: "Integration by Parts", f: "$$\\int f(x)\\cdot g(x)\\,dx = f(x)\\int g(x)\\,dx - \\int\\left[f'(x)\\int g(x)\\,dx\\right]dx$$" },
+    { t: "Type: ∫ dx/(ax²+bx+c)", f: "$$\\text{Substitute } \\frac{2ax+b}{2a} = t$$" },
+    { t: "Type: ∫(px+q)/(ax²+bx+c) dx", f: "$$\\text{Put } x+\\frac{b}{2a}=t, \\text{ then split into linear + constant term}$$" },
+    { t: "Trig Type: ∫ dx/(a+b sin²x)", f: "$$\\text{Put } \\tan x = t$$" },
+    { t: "Trig Type: ∫ dx/(a+b sin x)", f: "$$\\text{Put } \\tan\\frac{x}{2} = t$$" },
+    { t: "Trig Type: (a cos x+b sin x+c)/(m cos x+n sin x+p)", f: "$$\\text{Express } \\text{Nr} = A(\\text{Dr}) + B\\frac{d}{dx}(\\text{Dr}) + C$$" },
+    { t: "Type: ∫(x²+1)dx/(x⁴+Kx²+1)", f: "$$\\text{Divide Nr \\& Dr by } x^2, \\text{ put } x-\\frac{1}{x}=t$$" },
+    { t: "Type: ∫ dx/√((ax+b)(px+q))", f: "$$\\text{Put } px+q = t^2$$" },
+    { t: "Type: ∫ dx/((ax+b)√(px²+qx+r))", f: "$$\\text{Put } ax+b = \\frac{1}{t}$$" }
+  ]
+},
+
+def_int: {
+  title: "10. Definite Integration",
+  data: [
+    { t: "Property 1 & 2: Variable & Reversal", f: "$$\\int_a^b f(x)\\,dx = \\int_a^b f(t)\\,dt = -\\int_b^a f(x)\\,dx$$" },
+    { t: "Property 3: Additivity", f: "$$\\int_a^b f(x)\\,dx = \\int_a^c f(x)\\,dx + \\int_c^b f(x)\\,dx$$" },
+    { t: "Property 4: Even–Odd over [−a, a]", f: "$$\\int_{-a}^{a} f(x)\\,dx = \\begin{cases} 2\\displaystyle\\int_0^a f(x)\\,dx & f \\text{ even} \\\\ 0 & f \\text{ odd} \\end{cases}$$" },
+    { t: "Property 5: King's Property (a+b−x)", f: "$$\\int_a^b f(x)\\,dx = \\int_a^b f(a+b-x)\\,dx$$" },
+    { t: "Property 6: Periodic Shift (a−x)", f: "$$\\int_0^a f(x)\\,dx = \\int_0^a f(a-x)\\,dx$$" },
+    { t: "Property 7: Wallis' Property (2a−x)", f: "$$\\int_0^{2a} f(x)\\,dx = \\begin{cases} 2\\displaystyle\\int_0^a f(x)\\,dx & f(2a-x)=f(x) \\\\ 0 & f(2a-x)=-f(x) \\end{cases}$$" },
+    { t: "Property 8: Periodic Function (period T)", f: "$$\\int_0^{nT}f(x)dx = n\\int_0^T f(x)dx, \\quad \\int_{a}^{a+nT}f(x)dx = n\\int_0^T f(x)dx$$ $$\\int_{mT}^{nT}f(x)dx = (n-m)\\int_0^T f(x)dx, \\quad \\int_{a+nT}^{b+nT}f(x)dx = \\int_a^b f(x)dx$$" },
+    { t: "Property 9: Inequality (Squeeze)", f: "$$\\psi(x) \\le f(x) \\le \\phi(x) \\implies \\int_a^b \\psi(x)dx \\le \\int_a^b f(x)dx \\le \\int_a^b \\phi(x)dx$$" },
+    { t: "Property 10: Bound by m & M", f: "$$m \\le f(x) \\le M \\implies m(b-a) \\le \\int_a^b f(x)dx \\le M(b-a)$$" },
+    { t: "Property 11: Non-negative on [a,b]", f: "$$f(x) \\ge 0 \\text{ on } [a,b] \\implies \\int_a^b f(x)dx \\ge 0$$" },
+    { t: "Leibnitz Theorem", f: "$$\\frac{d}{dx}\\int_{g(x)}^{h(x)} f(t)\\,dt = h'(x)\\cdot f(h(x)) - g'(x)\\cdot f(g(x))$$" }
+  ]
+},
+
+
+fom: {
+  title: "11. Fundamentals of Math",
+  data: [
+    { t: "Intervals: Open, Closed, Mixed", f: "$$(a,b)=\\{x:a<x<b\\},\\; [a,b]=\\{x:a\\le x\\le b\\}$$ $$(a,b]=\\{x:a<x\\le b\\},\\; [a,b)=\\{x:a\\le x<b\\}$$" },
+    { t: "Infinite Intervals", f: "$$(a,\\infty),\\; [a,\\infty),\\; (-\\infty,b),\\; (-\\infty,b],\\; (-\\infty,\\infty)=\\mathbb{R}$$" },
+    { t: "Modulus Properties", f: "$$|a|\\ge 0,\\; |a|=|-a|,\\; |a|\\ge a,\\; |a|\\ge -a$$ $$|ab|=|a||b|,\\; \\left|\\frac{a}{b}\\right|=\\frac{|a|}{|b|}$$" },
+    { t: "Modulus Inequalities", f: "$$|a+b| \\le |a|+|b|, \\quad |a-b| \\ge \\big||a|-|b|\\big|$$" },
+    { t: "sin(A ± B)", f: "$$\\sin(A\\pm B) = \\sin A\\cos B \\pm \\cos A\\sin B$$" },
+    { t: "cos(A ± B)", f: "$$\\cos(A\\pm B) = \\cos A\\cos B \\mp \\sin A\\sin B$$" },
+    { t: "Product-to-Sum Identities", f: "$$2\\sin A\\cos B = \\sin(A+B)+\\sin(A-B)$$ $$2\\cos A\\sin B = \\sin(A+B)-\\sin(A-B)$$ $$2\\cos A\\cos B = \\cos(A+B)+\\cos(A-B)$$ $$2\\sin A\\sin B = \\cos(A-B)-\\cos(A+B)$$" },
+    { t: "sin²A − sin²B & cos²A − sin²B", f: "$$\\sin^2A-\\sin^2B = \\cos^2B-\\cos^2A = \\sin(A+B)\\sin(A-B)$$ $$\\cos^2A-\\sin^2B = \\cos^2B-\\sin^2A = \\cos(A+B)\\cos(A-B)$$" },
+    { t: "cot(A ± B) & tan(A+B+C)", f: "$$\\cot(A\\pm B) = \\frac{\\cot A\\cot B \\mp 1}{\\cot B \\pm \\cot A}$$ $$\\tan(A+B+C) = \\frac{\\tan A+\\tan B+\\tan C-\\tan A\\tan B\\tan C}{1-\\tan A\\tan B-\\tan B\\tan C-\\tan C\\tan A}$$" },
+    { t: "Sum-to-Product Formulas", f: "$$\\sin C+\\sin D = 2\\sin\\frac{C+D}{2}\\cos\\frac{C-D}{2}$$ $$\\sin C-\\sin D = 2\\cos\\frac{C+D}{2}\\sin\\frac{C-D}{2}$$ $$\\cos C+\\cos D = 2\\cos\\frac{C+D}{2}\\cos\\frac{C-D}{2}$$ $$\\cos C-\\cos D = -2\\sin\\frac{C+D}{2}\\sin\\frac{C-D}{2}$$" },
+    { t: "Double Angle: cos 2A", f: "$$\\cos 2A = \\cos^2A-\\sin^2A = 2\\cos^2A-1 = 1-2\\sin^2A$$ $$2\\cos^2\\frac{\\theta}{2}=1+\\cos\\theta, \\quad 2\\sin^2\\frac{\\theta}{2}=1-\\cos\\theta$$" },
+    { t: "Double Angle: sin 2A & cos 2A (in tan)", f: "$$\\sin 2A = \\frac{2\\tan A}{1+\\tan^2 A}, \\quad \\cos 2A = \\frac{1-\\tan^2 A}{1+\\tan^2 A}$$" },
+    { t: "Triple Angle: sin 3A, cos 3A, tan 3A", f: "$$\\sin 3A = 3\\sin A - 4\\sin^3 A$$ $$\\cos 3A = 4\\cos^3 A - 3\\cos A$$ $$\\tan 3A = \\frac{3\\tan A - \\tan^3 A}{1-3\\tan^2 A}$$" },
+    { t: "Special Angles: 15° & 75°", f: "$$\\sin 15° = \\frac{\\sqrt{6}-\\sqrt{2}}{4} = \\cos 75°$$ $$\\cos 15° = \\frac{\\sqrt{6}+\\sqrt{2}}{4} = \\sin 75°$$ $$\\tan 15° = 2-\\sqrt{3}, \\quad \\tan 75° = 2+\\sqrt{3}$$" },
+    { t: "Special Angles: 18° & 36°", f: "$$\\sin 18° = \\frac{\\sqrt{5}-1}{4}, \\quad \\cos 36° = \\frac{\\sqrt{5}+1}{4}$$" },
+    { t: "Range of a sin θ + b cos θ", f: "$$-\\sqrt{a^2+b^2} \\le a\\sin\\theta+b\\cos\\theta \\le \\sqrt{a^2+b^2}$$" },
+    { t: "Sine Series", f: "$$\\sin\\alpha+\\sin(\\alpha+\\beta)+\\cdots+\\sin(\\alpha+(n-1)\\beta) = \\frac{\\sin\\frac{n\\beta}{2}}{\\sin\\frac{\\beta}{2}}\\sin\\left(\\alpha+\\frac{(n-1)\\beta}{2}\\right)$$" },
+    { t: "Cosine Series", f: "$$\\cos\\alpha+\\cos(\\alpha+\\beta)+\\cdots+\\cos(\\alpha+(n-1)\\beta) = \\frac{\\sin\\frac{n\\beta}{2}}{\\sin\\frac{\\beta}{2}}\\cos\\left(\\alpha+\\frac{(n-1)\\beta}{2}\\right)$$" },
+    { t: "General Solution: sin θ = sin α", f: "$$\\theta = n\\pi + (-1)^n\\alpha, \\quad \\alpha\\in\\left[-\\frac{\\pi}{2},\\,\\frac{\\pi}{2}\\right],\\; n\\in\\mathbb{Z}$$" },
+    { t: "General Solution: cos θ = cos α", f: "$$\\theta = 2n\\pi \\pm \\alpha, \\quad \\alpha\\in[0,\\,\\pi],\\; n\\in\\mathbb{Z}$$" },
+    { t: "General Solution: tan θ = tan α", f: "$$\\theta = n\\pi + \\alpha, \\quad \\alpha\\in\\left(-\\frac{\\pi}{2},\\,\\frac{\\pi}{2}\\right),\\; n\\in\\mathbb{Z}$$" },
+    { t: "General Solution: Squared Forms", f: "$$\\sin^2\\theta=\\sin^2\\alpha,\\; \\cos^2\\theta=\\cos^2\\alpha,\\; \\tan^2\\theta=\\tan^2\\alpha \\implies \\theta = n\\pi \\pm \\alpha$$" }
+  ]
+},
+
+
+quadratic: {
+  title: "12. Quadratic Equations",
+  data: [
+    { t: "Roots Formula & Discriminant", f: "$$ax^2+bx+c=0 \\implies x = \\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}, \\quad D=b^2-4ac$$" },
+    { t: "Sum & Product of Roots", f: "$$\\alpha+\\beta = -\\frac{b}{a}, \\quad \\alpha\\beta = \\frac{c}{a}$$" },
+    { t: "Equation from Roots", f: "$$x^2-(\\alpha+\\beta)x+\\alpha\\beta = 0$$" },
+    { t: "Nature: D = 0 (Equal Roots)", f: "$$D=0 \\implies \\alpha=\\beta=-\\frac{b}{2a}$$" },
+    { t: "Nature: D > 0 (Real & Distinct)", f: "$$a,b,c\\in\\mathbb{R},\\; D>0 \\implies \\text{real distinct roots}$$ $$D \\text{ perfect square} \\implies \\text{rational}; \\quad D \\text{ not perfect square} \\implies \\text{irrational}$$" },
+    { t: "Nature: D < 0 (Imaginary)", f: "$$a,b,c\\in\\mathbb{R},\\; D<0 \\implies \\alpha = p+iq,\\; \\beta = p-iq$$" },
+    { t: "Both Roots Common", f: "$$\\frac{a_1}{a_2}=\\frac{b_1}{b_2}=\\frac{c_1}{c_2}$$" },
+    { t: "Exactly One Common Root α", f: "$$\\alpha = \\frac{a_1c_2-a_2c_1}{a_2b_1-a_1b_2} = \\frac{b_1c_2-b_2c_1}{a_1b_2-a_2b_1}$$" },
+    { t: "Range: Vertex Outside [x₁,x₂]", f: "$$-\\frac{b}{2a} \\notin [x_1,x_2] \\implies f(x) \\in \\big\\{\\min(f(x_1),f(x_2)),\\;\\max(f(x_1),f(x_2))\\big\\}$$" },
+    { t: "Range: Vertex Inside [x₁,x₂]", f: "$$-\\frac{b}{2a} \\in [x_1,x_2] \\implies f(x) \\in \\left[\\min\\left(f\\!\\left(-\\frac{b}{2a}\\right),\\,f(x_1),\\,f(x_2)\\right),\\;\\max\\left(f\\!\\left(-\\frac{b}{2a}\\right),\\,f(x_1),\\,f(x_2)\\right)\\right]$$" },
+    { t: "Both Roots > x₀ (a>0)", f: "$$D\\ge 0,\\quad f(x_0)>0,\\quad -\\frac{b}{2a}>x_0$$" },
+    { t: "Both Roots < x₀ (a>0)", f: "$$D\\ge 0,\\quad f(x_0)>0,\\quad -\\frac{b}{2a}<x_0$$" },
+    { t: "Roots on Either Side of x₀", f: "$$f(x_0) < 0$$" },
+    { t: "Both Roots in (x₁, x₂)", f: "$$D\\ge 0,\\quad f(x_1)>0,\\quad f(x_2)>0,\\quad x_1< -\\frac{b}{2a} < x_2$$" },
+    { t: "Exactly One Root in (x₁, x₂)", f: "$$f(x_1)\\cdot f(x_2) < 0$$" }
+  ]
+},
+
+
+sequence: {
+  title: "13. Sequence & Series",
+  data: [
+    { t: "A.P.: nth Term", f: "$$t_n = a + (n-1)d$$" },
+    { t: "A.P.: Sum of First n Terms", f: "$$S_n = \\frac{n}{2}[2a+(n-1)d] = \\frac{n}{2}[a+\\ell]$$" },
+    { t: "A.P.: rth Term from Sum", f: "$$t_r = S_r - S_{r-1}$$" },
+    { t: "A.P.: 3 Numbers in A.P.", f: "$$a-d,\\; a,\\; a+d$$" },
+    { t: "A.P.: 4 & 5 Numbers in A.P.", f: "$$\\text{4 terms: } a-3d,\\; a-d,\\; a+d,\\; a+3d$$ $$\\text{5 terms: } a-2d,\\; a-d,\\; a,\\; a+d,\\; a+2d$$" },
+    { t: "n-Arithmetic Means Between a & b", f: "$$A_r = a + \\frac{r(b-a)}{n+1}, \\quad r=1,2,\\ldots,n$$" },
+    { t: "G.P.: nth Term", f: "$$t_n = ar^{n-1}$$" },
+    { t: "G.P.: Sum of First n Terms", f: "$$S_n = \\begin{cases} na & r=1 \\\\ \\dfrac{a(r^n-1)}{r-1} & r\\neq 1 \\end{cases}$$" },
+    { t: "G.P.: Infinite Sum (|r|<1)", f: "$$S_\\infty = \\frac{a}{1-r}$$" },
+    { t: "n-Geometric Means Between a & b", f: "$$G_r = a\\left(\\frac{b}{a}\\right)^{\\frac{r}{n+1}}, \\quad r=1,2,\\ldots,n$$" },
+    { t: "Harmonic Mean", f: "$$H = \\frac{n}{\\frac{1}{a_1}+\\frac{1}{a_2}+\\cdots+\\frac{1}{a_n}}$$" },
+    { t: "Relation Between Means", f: "$$G^2 = A\\cdot H, \\quad A.M. \\ge G.M. \\ge H.M. \\text{ (for two numbers)}$$" },
+    { t: "Σk, Σr, Σr², Σr³", f: "$$\\sum_{r=1}^n k = nk$$ $$\\sum_{r=1}^n r = \\frac{n(n+1)}{2}$$ $$\\sum_{r=1}^n r^2 = \\frac{n(n+1)(2n+1)}{6}$$ $$\\sum_{r=1}^n r^3 = \\frac{n^2(n+1)^2}{4}$$" }
+  ]
+},
+
+
+binomial: {
+  title: "14. Binomial Theorem",
+  data: [
+    { t: "Binomial Expansion", f: "$$(a+b)^n = \\sum_{r=0}^{n}\\binom{n}{r}a^{n-r}b^r$$" },
+    { t: "General Term", f: "$$T_{r+1} = \\binom{n}{r}a^{n-r}b^r$$" },
+    { t: "Middle Term(s)", f: "$$n \\text{ even: } \\left(\\frac{n}{2}+1\\right)\\text{th term}$$ $$n \\text{ odd: } \\left(\\frac{n+1}{2}\\right)\\text{th and }\\left(\\frac{n+3}{2}\\right)\\text{th terms}$$" },
+    { t: "Multinomial Theorem", f: "$$(x_1+x_2+\\cdots+x_k)^n = \\sum \\frac{n!}{r_1!r_2!\\cdots r_k!}x_1^{r_1}x_2^{r_2}\\cdots x_k^{r_k}$$ $$\\text{Total terms} = \\binom{n+k-1}{k-1}$$" },
+    { t: "Application: (A−B)ⁿ = I − f", f: "$$n \\text{ odd: } (I+f)\\cdot f = k, \\quad k=A-B^2>0$$ $$n \\text{ even: } (I+f)(1-f) = k$$" },
+    { t: "Sum of All Binomial Coefficients", f: "$$\\binom{n}{0}+\\binom{n}{1}+\\cdots+\\binom{n}{n} = 2^n$$" },
+    { t: "Alternating Sum of Coefficients", f: "$$\\binom{n}{0}-\\binom{n}{1}+\\binom{n}{2}-\\cdots+(-1)^n\\binom{n}{n} = 0$$" },
+    { t: "Sum of Even / Odd Position Coefficients", f: "$$\\binom{n}{0}+\\binom{n}{2}+\\binom{n}{4}+\\cdots = \\binom{n}{1}+\\binom{n}{3}+\\binom{n}{5}+\\cdots = 2^{n-1}$$" },
+    { t: "Pascal's Identity", f: "$$\\binom{n}{r}+\\binom{n}{r-1} = \\binom{n+1}{r}$$" },
+    { t: "Ratio of Consecutive Coefficients", f: "$$\\frac{\\binom{n}{r}}{\\binom{n}{r-1}} = \\frac{n-r+1}{r}$$" },
+    { t: "Binomial for Negative / Fractional Index", f: "$$(1+x)^n = 1+nx+\\frac{n(n-1)}{2!}x^2+\\frac{n(n-1)(n-2)}{3!}x^3+\\cdots \\quad (|x|<1)$$ $$T_{r+1} = \\frac{n(n-1)\\cdots(n-r+1)}{r!}x^r$$" }
+  ]
+},
+
+
+pnc: {
+  title: "15. Permutation & Combination",
+  data: [
+    { t: "nPr & nCr", f: "$$^nP_r = \\frac{n!}{(n-r)!}, \\quad ^nC_r = \\frac{n!}{r!(n-r)!} = \\frac{^nP_r}{r!}$$" },
+    { t: "Circular Permutation", f: "$$\\text{n distinct objects in a circle: } (n-1)!$$" },
+    { t: "Permutation with Repetitions", f: "$$\\frac{n!}{p!\\,q!\\,r!\\cdots}$$" },
+    { t: "Selection: At Least One (distinct)", f: "$$\\binom{n}{1}+\\binom{n}{2}+\\cdots+\\binom{n}{n} = 2^n-1$$" },
+    { t: "Selection: At Least One (alike)", f: "$$(p+1)(q+1)(r+1)-1$$" },
+    { t: "Selection: At Least One (mixed)", f: "$$(p+1)(q+1)(r+1)\\cdot 2^{n-(p+q+r)} - 1$$" },
+    { t: "Total Divisors of N = p^a · q^b · r^c", f: "$$\\text{Total divisors} = (a+1)(b+1)(c+1)$$" },
+    { t: "Sum of Divisors", f: "$$(p^0+p^1+\\cdots+p^a)(q^0+q^1+\\cdots+q^b)(r^0+r^1+\\cdots+r^c)$$" },
+    { t: "N as Product of Two Factors", f: "$$\\begin{cases} \\frac{1}{2}(a+1)(b+1)(c+1) & N \\text{ not perfect square} \\\\ \\frac{1}{2}[(a+1)(b+1)(c+1)+1] & N \\text{ perfect square} \\end{cases}$$" },
+    { t: "N as Product of Coprime Factors", f: "$$2^{n-1} \\quad (n = \\text{number of distinct prime factors})$$" },
+    { t: "Dearrangement Formula", f: "$$D_n = n!\\left(1 - \\frac{1}{1!}+\\frac{1}{2!}-\\frac{1}{3!}+\\cdots+\\frac{(-1)^n}{n!}\\right)$$" }
+  ]
+},
+
+
+probability: {
+  title: "16. Probability",
+  data: [
+    { t: "Classical Definition", f: "$$P(A) = \\frac{n(A)}{n(S)} = \\frac{m}{m+n}$$" },
+    { t: "Odds in Favour / Against", f: "$$\\text{Odds in favour: } m:n, \\quad \\text{Odds against: } n:m$$" },
+    { t: "Addition Theorem", f: "$$P(A\\cup B) = P(A)+P(B)-P(A\\cap B)$$" },
+    { t: "De Morgan's Laws", f: "$$(A\\cup B)^c = A^c \\cap B^c, \\quad (A\\cap B)^c = A^c \\cup B^c$$" },
+    { t: "Distributive Laws", f: "$$A\\cup(B\\cap C)=(A\\cup B)\\cap(A\\cup C)$$ $$A\\cap(B\\cup C)=(A\\cap B)\\cup(A\\cap C)$$" },
+    { t: "Three Events: At Least One", f: "$$P(A\\cup B\\cup C) = P(A)+P(B)+P(C)-P(A\\cap B)-P(B\\cap C)-P(C\\cap A)+P(A\\cap B\\cap C)$$" },
+    { t: "Three Events: Exactly Two", f: "$$P = P(A\\cap B)+P(B\\cap C)+P(C\\cap A) - 3P(A\\cap B\\cap C)$$" },
+    { t: "Three Events: Exactly One", f: "$$P = P(A)+P(B)+P(C)-2[P(A\\cap B)+P(B\\cap C)+P(C\\cap A)]+3P(A\\cap B\\cap C)$$" },
+    { t: "Conditional Probability", f: "$$P(A|B) = \\frac{P(A\\cap B)}{P(B)}$$" },
+    { t: "Binomial Probability (r successes in n trials)", f: "$$P(X=r) = \\binom{n}{r}p^r q^{n-r}, \\quad p+q=1$$" },
+    { t: "Expectation", f: "$$E = \\sum p_i M_i$$" },
+    { t: "Total Probability Theorem", f: "$$P(A) = \\sum_{i=1}^{n} P(B_i)\\cdot P(A|B_i)$$" },
+    { t: "Bayes' Theorem", f: "$$P(B_i|A) = \\frac{P(B_i)\\cdot P(A|B_i)}{\\sum_{k=1}^{n} P(B_k)\\cdot P(A|B_k)}$$" },
+    { t: "Mean of Binomial Distribution", f: "$$\\mu = np$$" },
+    { t: "Variance of Binomial Distribution", f: "$$\\sigma^2 = npq$$" }
+  ]
+},
+
+
+complex: {
+  title: "17. Complex Numbers",
+  data: [
+    { t: "Conjugate", f: "$$z = a+ib \\implies \\bar{z} = a-ib$$" },
+    { t: "Equality", f: "$$z_1=z_2 \\iff \\text{Re}(z_1)=\\text{Re}(z_2) \\text{ and } \\text{Im}(z_1)=\\text{Im}(z_2)$$" },
+    { t: "Argument Properties", f: "$$\\arg(z_1 z_2) = \\arg z_1+\\arg z_2+2m\\pi$$ $$\\arg\\!\\left(\\frac{z_1}{z_2}\\right) = \\arg z_1-\\arg z_2+2m\\pi$$ $$\\arg(z^n) = n\\arg z + 2m\\pi$$" },
+    { t: "Argument: Special Cases", f: "$$\\arg z = 0 \\iff z>0 \\text{ (positive real)}$$ $$\\arg z = \\pm\\frac{\\pi}{2} \\iff z \\text{ is purely imaginary, } z\\neq 0$$" },
+    { t: "Conjugate Properties", f: "$$|z|=|\\bar{z}|, \\quad z\\bar{z}=|z|^2$$ $$\\overline{z_1+z_2}=\\bar{z_1}+\\bar{z_2}, \\quad \\overline{z_1-z_2}=\\bar{z_1}-\\bar{z_2}, \\quad \\overline{z_1 z_2}=\\bar{z_1}\\cdot\\bar{z_2}$$ $$\\overline{(z_1/z_2)}=\\bar{z_1}/\\bar{z_2}, \\quad \\overline{f(z)}=f(\\bar{z})$$" },
+    { t: "Modulus: Sum Formula", f: "$$|z_1+z_2|^2 = |z_1|^2+|z_2|^2+z_1\\bar{z_2}+\\bar{z_1}z_2$$" },
+    { t: "Rotation Theorem", f: "$$\\frac{z_3-z_2}{z_1-z_2} = \\frac{|z_3-z_2|}{|z_1-z_2|}\\cdot e^{i\\theta}$$" },
+    { t: "De Moivre's Theorem", f: "$$(\\cos\\theta+i\\sin\\theta)^n = \\cos n\\theta + i\\sin n\\theta$$" },
+    { t: "Product Form of De Moivre's", f: "$$\\prod_{k=1}^{n}(\\cos\\theta_k+i\\sin\\theta_k) = \\cos\\!\\left(\\sum\\theta_k\\right)+i\\sin\\!\\left(\\sum\\theta_k\\right)$$" },
+    { t: "Cube Roots of Unity", f: "$$1,\\; \\omega=-\\frac{1}{2}+i\\frac{\\sqrt{3}}{2},\\; \\omega^2=-\\frac{1}{2}-i\\frac{\\sqrt{3}}{2}$$ $$1+\\omega+\\omega^2=0, \\quad \\omega^3=1$$" },
+    { t: "General Power of ω", f: "$$1+\\omega^r+\\omega^{2r}=0 \\quad (r\\in\\mathbb{Z},\\; 3\\nmid r)$$" },
+    { t: "Distance & Section (Complex Plane)", f: "$$|z_1-z_2| = \\text{distance}$$ $$z = \\frac{nz_1+mz_2}{n+m} \\text{ (internal)}, \\quad z = \\frac{nz_1-mz_2}{n-m} \\text{ (external)}$$" },
+    { t: "Locus: Perpendicular Bisector", f: "$$|z-a|=|z-b| \\text{ is the perpendicular bisector of } ab$$" },
+    { t: "Locus: Circle", f: "$$\\left|\\frac{z-z_1}{z-z_2}\\right| = k \\neq 1,0 \\implies \\text{circle}$$" }
+  ]
+},
+
+
+vectors: {
+  title: "18. Vectors",
+  data: [
+    { t: "Position Vector & Distance", f: "$$\\overrightarrow{AB} = \\vec{b}-\\vec{a}, \\quad AB = |\\vec{b}-\\vec{a}|$$" },
+    { t: "Section Formula", f: "$$\\vec{r} = \\frac{m\\vec{b}+n\\vec{a}}{m+n} \\text{ (internal)}, \\quad \\text{Midpoint}=\\frac{\\vec{a}+\\vec{b}}{2}$$" },
+    { t: "Scalar (Dot) Product", f: "$$\\vec{a}\\cdot\\vec{b} = |\\vec{a}||\\vec{b}|\\cos\\theta$$" },
+    { t: "Dot Product: Components", f: "$$\\vec{a}=a_1\\hat{i}+a_2\\hat{j}+a_3\\hat{k}, \\; \\vec{b}=b_1\\hat{i}+b_2\\hat{j}+b_3\\hat{k}$$ $$\\vec{a}\\cdot\\vec{b} = a_1b_1+a_2b_2+a_3b_3$$" },
+    { t: "Angle Between Vectors", f: "$$\\cos\\phi = \\frac{\\vec{a}\\cdot\\vec{b}}{|\\vec{a}||\\vec{b}|}, \\quad 0\\le\\phi\\le\\pi$$" },
+    { t: "Projection of a on b", f: "$$\\text{proj}_{\\vec{b}}\\vec{a} = \\frac{\\vec{a}\\cdot\\vec{b}}{|\\vec{b}|}$$" },
+    { t: "Perpendicular Condition", f: "$$\\vec{a}\\perp\\vec{b} \\iff \\vec{a}\\cdot\\vec{b}=0 \\quad (\\vec{a},\\vec{b}\\neq\\vec{0})$$" },
+    { t: "Vector (Cross) Product", f: "$$|\\vec{a}\\times\\vec{b}| = |\\vec{a}||\\vec{b}|\\sin\\theta\\;\\hat{n}$$" },
+    { t: "Cross Product: Determinant Form", f: "$$\\vec{a}\\times\\vec{b} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ a_1 & a_2 & a_3 \\\\ b_1 & b_2 & b_3 \\end{vmatrix}$$" },
+    { t: "Cross Product = Area of Parallelogram", f: "$$|\\vec{a}\\times\\vec{b}| = \\text{Area of parallelogram with sides } \\vec{a},\\vec{b}$$" },
+    { t: "Parallel (Collinear) Condition", f: "$$\\vec{a}\\times\\vec{b}=\\vec{0} \\iff \\vec{a}=k\\vec{b} \\quad (\\vec{a},\\vec{b}\\neq\\vec{0})$$" },
+    { t: "Unit Vector Perpendicular to a & b", f: "$$\\hat{n} = \\pm\\frac{\\vec{a}\\times\\vec{b}}{|\\vec{a}\\times\\vec{b}|}$$" },
+    { t: "Area of Triangle ABC", f: "$$\\text{Area} = \\frac{1}{2}|\\vec{a}\\times\\vec{b}+\\vec{b}\\times\\vec{c}+\\vec{c}\\times\\vec{a}|$$" },
+    { t: "Area of Quadrilateral (Diagonals d₁, d₂)", f: "$$\\text{Area} = \\frac{1}{2}|\\vec{d_1}\\times\\vec{d_2}|$$" },
+    { t: "Lagrange's Identity", f: "$$|\\vec{a}\\times\\vec{b}|^2 = |\\vec{a}|^2|\\vec{b}|^2-(\\vec{a}\\cdot\\vec{b})^2$$" },
+    { t: "Scalar Triple Product", f: "$$[\\vec{a}\\;\\vec{b}\\;\\vec{c}] = \\vec{a}\\cdot(\\vec{b}\\times\\vec{c}) = \\begin{vmatrix} a_1 & a_2 & a_3 \\\\ b_1 & b_2 & b_3 \\\\ c_1 & c_2 & c_3 \\end{vmatrix}$$" },
+    { t: "STP: Cyclic Permutation", f: "$$[\\vec{a}\\;\\vec{b}\\;\\vec{c}] = [\\vec{b}\\;\\vec{c}\\;\\vec{a}] = [\\vec{c}\\;\\vec{a}\\;\\vec{b}]$$" },
+    { t: "STP: Sign Change on Swap", f: "$$[\\vec{a}\\;\\vec{b}\\;\\vec{c}] = -[\\vec{a}\\;\\vec{c}\\;\\vec{b}] = -[\\vec{c}\\;\\vec{b}\\;\\vec{a}]$$" },
+    { t: "STP: Coplanarity", f: "$$[\\vec{a}\\;\\vec{b}\\;\\vec{c}]=0 \\iff \\vec{a},\\vec{b},\\vec{c} \\text{ are coplanar}$$" },
+    { t: "Volume of Tetrahedron OABC", f: "$$V = \\frac{1}{6}|[\\vec{a}\\;\\vec{b}\\;\\vec{c}]|$$" },
+    { t: "Centroid of Tetrahedron", f: "$$\\vec{g} = \\frac{\\vec{a}+\\vec{b}+\\vec{c}+\\vec{d}}{4}$$" },
+    { t: "Vector Triple Product", f: "$$\\vec{a}\\times(\\vec{b}\\times\\vec{c}) = (\\vec{a}\\cdot\\vec{c})\\vec{b}-(\\vec{a}\\cdot\\vec{b})\\vec{c}$$ $$(\\vec{a}\\times\\vec{b})\\times\\vec{c} = (\\vec{a}\\cdot\\vec{c})\\vec{b}-(\\vec{b}\\cdot\\vec{c})\\vec{a}$$" }
+  ]
+},
+
+
+three_d: {
+  title: "19. 3-D Geometry",
+  data: [
+    { t: "Distance Formula", f: "$$AB = \\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}$$" },
+    { t: "Distance from Axes", f: "$$PA=\\sqrt{y^2+z^2}, \\quad PB=\\sqrt{x^2+z^2}, \\quad PC=\\sqrt{x^2+y^2}$$" },
+    { t: "Section Formula & Midpoint", f: "$$x=\\frac{mx_2+nx_1}{m+n},\\; y=\\frac{my_2+ny_1}{m+n},\\; z=\\frac{mz_2+nz_1}{m+n}$$ $$\\text{Midpoint: } \\left(\\frac{x_1+x_2}{2},\\;\\frac{y_1+y_2}{2},\\;\\frac{z_1+z_2}{2}\\right)$$" },
+    { t: "Direction Cosines (l, m, n)", f: "$$l=\\cos\\alpha,\\; m=\\cos\\beta,\\; n=\\cos\\gamma, \\quad l^2+m^2+n^2=1$$" },
+    { t: "Direction Ratios to Cosines", f: "$$l=\\pm\\frac{a}{\\sqrt{a^2+b^2+c^2}},\\; m=\\pm\\frac{b}{\\sqrt{a^2+b^2+c^2}},\\; n=\\pm\\frac{c}{\\sqrt{a^2+b^2+c^2}}$$" },
+    { t: "Angle Between Two Lines", f: "$$\\cos\\theta = \\frac{a_1a_2+b_1b_2+c_1c_2}{\\sqrt{a_1^2+b_1^2+c_1^2}\\sqrt{a_2^2+b_2^2+c_2^2}}$$" },
+    { t: "Perpendicular & Parallel Lines", f: "$$\\perp: a_1a_2+b_1b_2+c_1c_2=0, \\quad \\parallel: \\frac{a_1}{a_2}=\\frac{b_1}{b_2}=\\frac{c_1}{c_2}$$" },
+    { t: "Projection of PQ on a Line (l,m,n)", f: "$$\\text{Proj} = l(x_2-x_1)+m(y_2-y_1)+n(z_2-z_1)$$" },
+    { t: "Plane: General & Normal Form", f: "$$ax+by+cz+d=0, \\quad lx+my+nz=p$$" },
+    { t: "Plane: Through a Point & Intercept Form", f: "$$a(x-x_1)+b(y-y_1)+c(z-z_1)=0$$ $$\\frac{x}{a}+\\frac{y}{b}+\\frac{z}{c}=1$$" },
+    { t: "Plane: Vector Form", f: "$$(\\vec{r}-\\vec{a})\\cdot\\vec{n}=0 \\quad \\text{or} \\quad \\vec{r}\\cdot\\vec{n}=\\vec{a}\\cdot\\vec{n}$$" },
+    { t: "Distance Between Parallel Planes", f: "$$d = \\frac{|d_1-d_2|}{\\sqrt{a^2+b^2+c^2}}$$" },
+    { t: "Point to Plane Distance", f: "$$p = \\frac{|ax'+by'+cz'+d|}{\\sqrt{a^2+b^2+c^2}}$$" },
+    { t: "Foot of Perpendicular (Point to Plane)", f: "$$\\frac{x'-x_1}{a}=\\frac{y'-y_1}{b}=\\frac{z'-z_1}{c}=-\\frac{ax_1+by_1+cz_1+d}{a^2+b^2+c^2}$$" },
+    { t: "Image of Point in a Plane", f: "$$\\frac{x'-x_1}{a}=\\frac{y'-y_1}{b}=\\frac{z'-z_1}{c}=-\\frac{2(ax_1+by_1+cz_1+d)}{a^2+b^2+c^2}$$" },
+    { t: "Angle Between Two Planes", f: "$$\\cos\\theta = \\frac{aa'+bb'+cc'}{\\sqrt{a^2+b^2+c^2}\\sqrt{a'^2+b'^2+c'^2}}$$ $$\\perp: aa'+bb'+cc'=0, \\quad \\parallel: \\frac{a}{a'}=\\frac{b}{b'}=\\frac{c}{c'}$$" },
+    { t: "Angle Bisectors of Two Planes", f: "$$\\frac{a_1x+b_1y+c_1z+d_1}{\\sqrt{a_1^2+b_1^2+c_1^2}} = \\pm \\frac{a_2x+b_2y+c_2z+d_2}{\\sqrt{a_2^2+b_2^2+c_2^2}}$$" },
+    { t: "Acute / Obtuse Angle Bisector", f: "$$a_1a_2+b_1b_2+c_1c_2 > 0 \\implies \\text{origin in obtuse angle}$$ $$a_1a_2+b_1b_2+c_1c_2 < 0 \\implies \\text{origin in acute angle}$$" },
+    { t: "Family of Planes", f: "$$(a_1x+b_1y+c_1z+d_1)+\\lambda(a_2x+b_2y+c_2z+d_2)=0$$" },
+    { t: "Volume of Tetrahedron (Coordinate)", f: "$$V = \\frac{1}{6}\\begin{vmatrix} x_1 & y_1 & z_1 & 1 \\\\ x_2 & y_2 & z_2 & 1 \\\\ x_3 & y_3 & z_3 & 1 \\\\ x_4 & y_4 & z_4 & 1 \\end{vmatrix}$$" },
+    { t: "Line: Symmetric (Cartesian) Form", f: "$$\\frac{x-x_1}{a}=\\frac{y-y_1}{b}=\\frac{z-z_1}{c}=r$$" },
+    { t: "Line: Vector Form", f: "$$\\vec{r} = \\vec{a}+\\lambda\\vec{b}$$" },
+    { t: "Angle Between Line & Plane", f: "$$\\sin\\theta = \\frac{|a\\ell+bm+cn|}{\\sqrt{\\ell^2+m^2+n^2}\\sqrt{a^2+b^2+c^2}}$$" },
+    { t: "Line Perpendicular / Parallel to Plane", f: "$$\\perp: \\frac{a}{\\ell}=\\frac{b}{m}=\\frac{c}{n}, \\quad \\parallel: a\\ell+bm+cn=0$$" },
+    { t: "Line Lies in a Plane", f: "$$ax_1+by_1+cz_1+d=0 \\quad \\text{and} \\quad a\\ell+bm+cn=0$$" },
+    { t: "Skew Lines: Condition", f: "$$\\begin{vmatrix} \\alpha'-\\alpha & \\beta'-\\beta & \\gamma'-\\gamma \\\\ \\ell & m & n \\\\ \\ell' & m' & n' \\end{vmatrix} \\neq 0$$" },
+    { t: "Shortest Distance (Skew Lines)", f: "$$d = \\frac{|(\\vec{a_2}-\\vec{a_1})\\cdot(\\vec{b_1}\\times\\vec{b_2})|}{|\\vec{b_1}\\times\\vec{b_2}|}$$" },
+    { t: "Coplanarity of Two Lines", f: "$$[\\vec{a}-\\vec{c}\\;\\;\\vec{b}\\;\\;\\vec{d}]=0$$" },
+    { t: "Shortest Distance (Parallel Lines)", f: "$$d = \\frac{|(\\vec{a_2}-\\vec{a_1})\\times\\vec{b}|}{|\\vec{b}|}$$" },
+    { t: "Sphere: General Equation", f: "$$x^2+y^2+z^2+2ux+2vy+2wz+d=0$$ $$\\text{Centre }(-u,-v,-w), \\quad r=\\sqrt{u^2+v^2+w^2-d}$$" }
+  ]
+},
+
+
+sot: {
+  title: "20. Solution of Triangle",
+  data: [
+    { t: "Sine Rule", f: "$$\\frac{a}{\\sin A}=\\frac{b}{\\sin B}=\\frac{c}{\\sin C}=2R$$" },
+    { t: "Cosine Formula (all three)", f: "$$\\cos A=\\frac{b^2+c^2-a^2}{2bc}, \\quad \\cos B=\\frac{c^2+a^2-b^2}{2ca}, \\quad \\cos C=\\frac{a^2+b^2-c^2}{2ab}$$" },
+    { t: "Projection Formula", f: "$$a=b\\cos C+c\\cos B, \\quad b=c\\cos A+a\\cos C, \\quad c=a\\cos B+b\\cos A$$" },
+    { t: "Napier's Analogy (Tangent Rule)", f: "$$\\tan\\frac{B-C}{2}=\\frac{b-c}{b+c}\\cot\\frac{A}{2}$$ $$\\tan\\frac{A-C}{2}=\\frac{a-c}{a+c}\\cot\\frac{B}{2}$$ $$\\tan\\frac{A-B}{2}=\\frac{a-b}{a+b}\\cot\\frac{C}{2}$$" },
+    { t: "Half Angle: sin(A/2), cos(A/2)", f: "$$\\sin\\frac{A}{2}=\\sqrt{\\frac{(s-b)(s-c)}{bc}}, \\quad \\cos\\frac{A}{2}=\\sqrt{\\frac{s(s-a)}{bc}}$$" },
+    { t: "Half Angle: tan(A/2)", f: "$$\\tan\\frac{A}{2}=\\sqrt{\\frac{(s-b)(s-c)}{s(s-a)}}=\\frac{\\Delta}{s(s-a)}$$" },
+    { t: "sin A in Terms of s, a, b, c", f: "$$\\sin A = \\frac{2}{bc}\\sqrt{s(s-a)(s-b)(s-c)}=\\frac{2\\Delta}{bc}$$" },
+    { t: "Area of Triangle (4 forms)", f: "$$\\Delta = \\frac{1}{2}ab\\sin C = \\frac{1}{2}bc\\sin A = \\frac{1}{2}ca\\sin B = \\sqrt{s(s-a)(s-b)(s-c)}$$" },
+    { t: "m-n Rule (Internal Bisector BD:DC = m:n)", f: "$$(m+n)\\cot\\theta = m\\cot\\alpha - n\\cot\\beta = n\\cot B - m\\cot C$$" },
+    { t: "Circumradius R", f: "$$R = \\frac{a}{2\\sin A}=\\frac{b}{2\\sin B}=\\frac{c}{2\\sin C}=\\frac{abc}{4\\Delta}$$" },
+    { t: "Inradius r (3 forms)", f: "$$r = \\frac{\\Delta}{s} = (s-a)\\tan\\frac{A}{2} = 4R\\sin\\frac{A}{2}\\sin\\frac{B}{2}\\sin\\frac{C}{2}$$" },
+    { t: "Exradii r₁, r₂, r₃", f: "$$r_1=\\frac{\\Delta}{s-a},\\; r_2=\\frac{\\Delta}{s-b},\\; r_3=\\frac{\\Delta}{s-c}$$" },
+    { t: "Exradii in Terms of R & Angles", f: "$$r_1=4R\\sin\\frac{A}{2}\\cos\\frac{B}{2}\\cos\\frac{C}{2},\\; r_2=4R\\cos\\frac{A}{2}\\sin\\frac{B}{2}\\cos\\frac{C}{2},\\; r_3=4R\\cos\\frac{A}{2}\\cos\\frac{B}{2}\\sin\\frac{C}{2}$$" },
+    { t: "Exradii: tan Form", f: "$$r_1=s\\tan\\frac{A}{2},\\; r_2=s\\tan\\frac{B}{2},\\; r_3=s\\tan\\frac{C}{2}$$" },
+    { t: "Length of Angle Bisector from A", f: "$$\\beta_a = \\frac{2bc\\cos\\frac{A}{2}}{b+c}$$" },
+    { t: "Length of Median from A", f: "$$m_a = \\frac{1}{2}\\sqrt{2b^2+2c^2-a^2}$$" },
+    { t: "Length of Altitude from A", f: "$$h_a = \\frac{2\\Delta}{a}$$" },
+    { t: "Pedal Triangle: Angles", f: "$$\\pi-2A,\\; \\pi-2B,\\; \\pi-2C$$" },
+    { t: "Pedal Triangle: Sides", f: "$$a\\cos A=R\\sin 2A,\\; b\\cos B=R\\sin 2B,\\; c\\cos C=R\\sin 2C$$" },
+    { t: "Excentral Triangle: Angles", f: "$$\\frac{\\pi}{2}-\\frac{A}{2},\\; \\frac{\\pi}{2}-\\frac{B}{2},\\; \\frac{\\pi}{2}-\\frac{C}{2}$$" },
+    { t: "Excentral Triangle: Sides & Distances", f: "$$\\text{Sides: } 4R\\cos\\frac{A}{2},\\;4R\\cos\\frac{B}{2},\\;4R\\cos\\frac{C}{2}$$ $$I I_1=4R\\sin\\frac{A}{2},\\; I I_2=4R\\sin\\frac{B}{2},\\; I I_3=4R\\sin\\frac{C}{2}$$" },
+    { t: "OH² (Circumcentre–Orthocentre)", f: "$$OH^2 = R^2(1-8\\cos A\\cos B\\cos C)$$" },
+    { t: "OI² (Circumcentre–Incentre)", f: "$$OI^2 = R^2-2Rr = R^2\\left(1-8\\sin^2\\frac{A}{2}\\sin^2\\frac{B}{2}\\sin^2\\frac{C}{2}\\right)$$" },
+    { t: "OG² (Circumcentre–Centroid)", f: "$$OG^2 = R^2-\\frac{1}{9}(a^2+b^2+c^2)$$" }
+  ]
+},
+
+itf: {
+  title: "21. Inverse Trig Functions",
+  data: [
+    { t: "Domain & Range: sin⁻¹, cos⁻¹, tan⁻¹", f: "$$\\sin^{-1}x:\\;[-1,1]\\to\\left[-\\frac{\\pi}{2},\\frac{\\pi}{2}\\right]$$ $$\\cos^{-1}x:\\;[-1,1]\\to[0,\\pi]$$ $$\\tan^{-1}x:\\;\\mathbb{R}\\to\\left(-\\frac{\\pi}{2},\\frac{\\pi}{2}\\right)$$" },
+    { t: "Domain & Range: cot⁻¹, sec⁻¹, cosec⁻¹", f: "$$\\cot^{-1}x:\\;\\mathbb{R}\\to(0,\\pi)$$ $$\\sec^{-1}x:\\;|x|\\ge 1\\to[0,\\pi]\\setminus\\{\\frac{\\pi}{2}\\}$$ $$\\operatorname{cosec}^{-1}x:\\;|x|\\ge 1\\to\\left[-\\frac{\\pi}{2},\\frac{\\pi}{2}\\right]\\setminus\\{0\\}$$" },
+    { t: "sin⁻¹(sin x), cos⁻¹(cos x), tan⁻¹(tan x)", f: "$$\\sin^{-1}(\\sin x)=x,\\; x\\in\\left[-\\frac{\\pi}{2},\\frac{\\pi}{2}\\right]$$ $$\\cos^{-1}(\\cos x)=x,\\; x\\in[0,\\pi]$$ $$\\tan^{-1}(\\tan x)=x,\\; x\\in\\left(-\\frac{\\pi}{2},\\frac{\\pi}{2}\\right)$$" },
+    { t: "cot⁻¹(cot x), sec⁻¹(sec x), cosec⁻¹(cosec x)", f: "$$\\cot^{-1}(\\cot x)=x,\\; x\\in(0,\\pi)$$ $$\\sec^{-1}(\\sec x)=x,\\; x\\in[0,\\pi],\\; x\\neq\\frac{\\pi}{2}$$ $$\\operatorname{cosec}^{-1}(\\operatorname{cosec} x)=x,\\; x\\in\\left[-\\frac{\\pi}{2},\\frac{\\pi}{2}\\right],\\; x\\neq 0$$" },
+    { t: "Odd / Even Property", f: "$$\\sin^{-1}(-x)=-\\sin^{-1}x, \\quad \\tan^{-1}(-x)=-\\tan^{-1}x$$ $$\\cos^{-1}(-x)=\\pi-\\cos^{-1}x, \\quad \\cot^{-1}(-x)=\\pi-\\cot^{-1}x$$" },
+    { t: "Complementary Pair Identities", f: "$$\\sin^{-1}x+\\cos^{-1}x=\\frac{\\pi}{2},\\quad \\tan^{-1}x+\\cot^{-1}x=\\frac{\\pi}{2}$$ $$\\operatorname{cosec}^{-1}x+\\sec^{-1}x=\\frac{\\pi}{2}$$" },
+    { t: "sin⁻¹x + sin⁻¹y", f: "$$x,y\\ge 0,\\; x^2+y^2\\le 1:\\; \\sin^{-1}\\!\\left(x\\sqrt{1-y^2}+y\\sqrt{1-x^2}\\right)$$ $$x,y\\ge 0,\\; x^2+y^2>1:\\; \\pi-\\sin^{-1}\\!\\left(x\\sqrt{1-y^2}+y\\sqrt{1-x^2}\\right)$$" },
+    { t: "cos⁻¹x + cos⁻¹y", f: "$$x,y\\ge 0:\\; \\cos^{-1}\\!\\left(xy-\\sqrt{1-x^2}\\sqrt{1-y^2}\\right)$$" },
+    { t: "tan⁻¹x + tan⁻¹y", f: "$$x,y>0,\\; xy<1:\\; \\tan^{-1}\\!\\left(\\frac{x+y}{1-xy}\\right)$$ $$x,y>0,\\; xy>1:\\; \\pi+\\tan^{-1}\\!\\left(\\frac{x+y}{1-xy}\\right)$$ $$x,y>0,\\; xy=1:\\; \\frac{\\pi}{2}$$" },
+    { t: "sin⁻¹x − sin⁻¹y", f: "$$x,y\\ge 0:\\; \\sin^{-1}\\!\\left(x\\sqrt{1-y^2}-y\\sqrt{1-x^2}\\right)$$" },
+    { t: "cos⁻¹x − cos⁻¹y", f: "$$x,y\\ge 0,\\; x\\le y:\\; \\cos^{-1}\\!\\left(xy+\\sqrt{1-x^2}\\sqrt{1-y^2}\\right)$$" },
+    { t: "tan⁻¹x − tan⁻¹y", f: "$$x,y\\ge 0:\\; \\tan^{-1}\\!\\left(\\frac{x-y}{1+xy}\\right)$$" },
+    { t: "sin⁻¹(2x√(1−x²))", f: "$$\\sin^{-1}\\!\\left(2x\\sqrt{1-x^2}\\right)=\\begin{cases} \\sin^{-1}(2x) & |x|\\le\\frac{1}{\\sqrt{2}} \\\\ \\pi-\\sin^{-1}(2x) & x>\\frac{1}{\\sqrt{2}} \\\\ -\\pi-\\sin^{-1}(2x) & x<\\frac{-1}{\\sqrt{2}} \\end{cases}$$" },
+    { t: "cos⁻¹(2x²−1)", f: "$$\\cos^{-1}(2x^2-1)=\\begin{cases} 2\\cos^{-1}x & 0\\le x\\le 1 \\\\ \\pi-2\\cos^{-1}x & -1\\le x<0 \\end{cases}$$" },
+    { t: "tan⁻¹(2x/(1−x²))", f: "$$\\tan^{-1}\\!\\left(\\frac{2x}{1-x^2}\\right)=\\begin{cases} 2\\tan^{-1}x & |x|<1 \\\\ \\pi+2\\tan^{-1}x & x>1 \\\\ -\\pi+2\\tan^{-1}x & x<-1 \\end{cases}$$" },
+    { t: "sin⁻¹(2x/(1+x²))", f: "$$\\sin^{-1}\\!\\left(\\frac{2x}{1+x^2}\\right)=\\begin{cases} 2\\tan^{-1}x & |x|\\le 1 \\\\ \\pi-2\\tan^{-1}x & x>1 \\\\ -\\pi-2\\tan^{-1}x & x<-1 \\end{cases}$$" },
+    { t: "cos⁻¹((1−x²)/(1+x²))", f: "$$\\cos^{-1}\\!\\left(\\frac{1-x^2}{1+x^2}\\right)=\\begin{cases} 2\\tan^{-1}x & x\\ge 0 \\\\ -2\\tan^{-1}x & x<0 \\end{cases}$$" },
+    { t: "tan⁻¹x+tan⁻¹y+tan⁻¹z (combined)", f: "$$x,y,z>0,\\; xy+yz+zx<1:\\;\\tan^{-1}\\!\\left(\\frac{x+y+z-xyz}{1-xy-yz-zx}\\right)$$" },
+    { t: "Special: Three Terms = π", f: "$$\\tan^{-1}x+\\tan^{-1}y+\\tan^{-1}z=\\pi \\implies x+y+z=xyz$$" },
+    { t: "Special: Three Terms = π/2", f: "$$\\tan^{-1}x+\\tan^{-1}y+\\tan^{-1}z=\\frac{\\pi}{2} \\implies xy+yz+zx=1$$" },
+    { t: "Classic Identity", f: "$$\\tan^{-1}1+\\tan^{-1}2+\\tan^{-1}3=\\pi$$" }
+  ]
+},  
+stats: {
+  title: "22. Statistics",
+  data: [
+    { t: "Arithmetic Mean (Simple)", f: "$$\\bar{x}=\\frac{x_1+x_2+\\cdots+x_n}{n}=\\frac{1}{n}\\sum_{i=1}^{n}x_i$$" },
+    { t: "Arithmetic Mean (Weighted/Frequency)", f: "$$\\bar{x}=\\frac{f_1x_1+f_2x_2+\\cdots+f_nx_n}{f_1+f_2+\\cdots+f_n}=\\frac{\\sum f_ix_i}{N}, \\quad N=\\sum f_i$$" },
+    { t: "Property: Sum of Deviations = 0", f: "$$\\sum_{i=1}^{n}(x_i-\\bar{x})=0$$" },
+    { t: "Property: Min Sum of Squared Deviations", f: "$$\\sum(x_i-\\bar{x})^2 \\text{ is minimum}$$" },
+    { t: "Property: Shifting & Scaling of Mean", f: "$$\\overline{\\lambda x_i}=\\lambda\\bar{x}, \\quad \\overline{x_i+\\ell}=\\bar{x}+\\ell, \\quad \\overline{ax_i+b}=a\\bar{x}+b$$" },
+    { t: "Median (Ungrouped)", f: "$$\\text{Median}=\\begin{cases} \\left(\\frac{n+1}{2}\\right)\\text{th term} & n \\text{ odd} \\\\ \\text{Mean of }\\frac{n}{2}\\text{th and }\\left(\\frac{n}{2}+1\\right)\\text{th terms} & n \\text{ even} \\end{cases}$$" },
+    { t: "Mode (Ungrouped)", f: "$$\\text{Value with maximum frequency}$$" },
+    { t: "Mean–Median–Mode Relationship", f: "$$\\text{Symmetric: } \\bar{x}=\\text{Median}=\\text{Mode}$$ $$\\text{Skew: } \\text{Median}=\\frac{\\text{Mode}+2\\bar{x}}{3}$$" },
+    { t: "Range", f: "$$\\text{Range}=L-S, \\quad \\text{Coefficient of Range}=\\frac{L-S}{L+S}$$" },
+    { t: "Mean Deviation (Simple)", f: "$$M.D.=\\frac{1}{n}\\sum_{i=1}^{n}|x_i-\\bar{x}|$$" },
+    { t: "Mean Deviation (Frequency)", f: "$$M.D.=\\frac{1}{N}\\sum_{i=1}^{n}f_i|x_i-\\bar{x}|$$" },
+    { t: "Variance (Definition)", f: "$$\\sigma_x^2=\\frac{1}{n}\\sum_{i=1}^{n}(x_i-\\bar{x})^2$$" },
+    { t: "Variance (Computational Formula)", f: "$$\\sigma_x^2=\\frac{1}{n}\\sum x_i^2-(\\bar{x})^2$$" },
+    { t: "Variance (Shortcut / Assumed Mean)", f: "$$\\sigma_d^2=\\frac{1}{n}\\sum d_i^2-\\left(\\frac{1}{n}\\sum d_i\\right)^2, \\quad d_i=x_i-a$$" },
+    { t: "Standard Deviation", f: "$$\\sigma_x=\\sqrt{\\text{Variance}}=\\sqrt{\\sigma_x^2}$$" },
+    { t: "Coefficient of S.D. & C.V.", f: "$$\\text{Coeff. of S.D.}=\\frac{\\sigma}{\\bar{x}}, \\quad \\text{Coeff. of Variation}=\\frac{\\sigma}{\\bar{x}}\\times 100\\%$$" },
+    { t: "Variance Properties", f: "$$\\text{Var}(x_i+\\lambda)=\\text{Var}(x_i)$$ $$\\text{Var}(\\lambda\\cdot x_i)=\\lambda^2\\cdot\\text{Var}(x_i)$$ $$\\text{Var}(ax_i+b)=a^2\\cdot\\text{Var}(x_i)$$" }
+  ]
+},
+  
+
+reasoning: {
+  title: "23. Mathematical Reasoning",
+  data: [
+    { t: "Truth Table: Conjunction (∧)", f: "$$p\\land q \\text{ is TRUE only when both } p \\text{ and } q \\text{ are TRUE}$$" },
+    { t: "Truth Table: Disjunction (∨)", f: "$$p\\lor q \\text{ is FALSE only when both } p \\text{ and } q \\text{ are FALSE}$$" },
+    { t: "Truth Table: Implication (→)", f: "$$p\\to q \\text{ is FALSE only when } p=\\text{T and } q=\\text{F}$$" },
+    { t: "Truth Table: Biconditional (↔)", f: "$$p\\leftrightarrow q \\text{ is TRUE when } p=q \\text{ (both T or both F)}$$" },
+    { t: "Negation of Statements", f: "$$\\sim(p\\land q)=\\sim p\\lor\\sim q$$ $$\\sim(p\\lor q)=\\sim p\\land\\sim q$$ $$\\sim(p\\to q)=p\\land\\sim q$$ $$\\sim(p\\leftrightarrow q)=(p\\land\\sim q)\\lor(\\sim p\\land q)$$" },
+    { t: "Tautology", f: "$$\\text{A statement that is TRUE for all truth values}$$ $$\\text{Example: } p\\lor\\sim p \\text{ is always TRUE}$$" },
+    { t: "Fallacy (Contradiction)", f: "$$\\text{A statement that is FALSE for all truth values}$$ $$\\text{Example: } p\\land\\sim p \\text{ is always FALSE}$$" },
+    { t: "Conditional ↔ Logical Equivalence", f: "$$p\\implies q \\equiv \\sim p\\lor q$$" },
+    { t: "Contrapositive", f: "$$p\\implies q \\equiv \\sim q \\implies \\sim p$$" },
+    { t: "Converse", f: "$$\\text{Converse of } p\\implies q \\text{ is } q\\implies p$$" },
+    { t: "Inverse", f: "$$\\text{Inverse of } p\\implies q \\text{ is } \\sim p\\implies\\sim q$$" },
+    { t: "p → q: All Related Forms Summary", f: "$$\\text{Original: } p\\to q \\equiv \\sim p\\lor q$$ $$\\text{Contrapositive: } \\sim q\\to\\sim p \\equiv p\\to q \\;\\checkmark$$ $$\\text{Converse: } q\\to p \\not\\equiv p\\to q$$ $$\\text{Inverse: } \\sim p\\to\\sim q \\not\\equiv p\\to q$$" },
+    { t: "Negation of Quantified Statements", f: "$$\\sim(\\forall x\\, p(x))\\equiv \\exists x\\,\\sim p(x)$$ $$\\sim(\\exists x\\, p(x))\\equiv \\forall x\\,\\sim p(x)$$" }
+  ]
+},
+
+
+sets: {
+    title: "24. Sets and Relation",
+    data: [
+      { t: "Commutative Law", f: "$$A\\cup B = B\\cup A, \\quad A\\cap B = B\\cap A$$" },
+      { t: "Associative Law", f: "$$(A\\cup B)\\cup C = A\\cup(B\\cup C) \\quad (A\\cap B)\\cap C = A\\cap(B\\cap C)$$" },
+      { t: "Distributive Law", f: "$$A\\cup(B\\cap C)=(A\\cup B)\\cap(A\\cup C) \\quad A\\cap(B\\cup C)=(A\\cap B)\\cup(A\\cap C)$$" },
+      { t: "De Morgan's Laws", f: "$$(A\\cup B)'=A'\\cap B', \\quad (A\\cap B)'=A'\\cup B'$$" },
+      { t: "Identity Law", f: "$$A\\cap U=A, \\quad A\\cup\\phi=A$$" },
+      { t: "Complement Law", f: "$$A\\cup A'=U, \\quad A\\cap A'=\\phi, \\quad (A')'=A$$" },
+      { t: "Idempotent Law", f: "$$A\\cup A=A, \\quad A\\cap A=A$$" },
+      { t: "n(A ∪ B) — Inclusion-Exclusion (2 sets)", f: "$$n(A\\cup B)=n(A)+n(B)-n(A\\cap B)$$" },
+      { t: "n(A − B)", f: "$$n(A-B)=n(A)-n(A\\cap B)$$" },
+      { t: "n(A ∪ B ∪ C) — Inclusion-Exclusion (3 sets)", f: "$$n(A\\cup B\\cup C)=n(A)+n(B)+n(C)-n(A\\cap B)-n(B\\cap C)-n(C\\cap A)+n(A\\cap B\\cap C)$$" },
+      { t: "Exactly Two Sets (of A, B, C)", f: "$$n(A\\cap B)+n(B\\cap C)+n(C\\cap A)-3\\cdot n(A\\cap B\\cap C)$$" },
+      { t: "Exactly One Set (of A, B, C)", f: "$$n(A)+n(B)+n(C)-2[n(A\\cap B)+n(B\\cap C)+n(C\\cap A)]+3\\cdot n(A\\cap B\\cap C)$$" },
+      { t: "None of the Three Sets", f: "$$n(U)-n(A\\cup B\\cup C)$$" },
+      { t: "Power Set", f: "$$\\text{If }|A|=n, \\text{ then }|\\mathcal{P}(A)|=2^n$$" },
+      { t: "Cartesian Product", f: "$$A\\times B=\\{(a,b):a\\in A,\\, b\\in B\\}, \\quad |A\\times B|=|A|\\cdot|B|$$" },
+      { t: "Reflexive Relation", f: "$$R \\text{ is reflexive on } A \\iff (a,a)\\in R\\;\\forall a\\in A$$" },
+      { t: "Transitive Relation", f: "$$R \\text{ is transitive} \\iff (a,b) \\in R \\text{ and } (b,c) \\in R \\implies (a,c) \\in R$$" },
+      { t: "Equivalence Relation", f: "$$R \\text{ is equivalence} \\iff R \\text{ is reflexive, symmetric, transitive}$$" },
+      { t: "Number of Relations on Set A", f: "$$\\text{Total relations} = 2^{|A|^2} = 2^{n^2}$$" },
+      { t: "Number of Reflexive Relations", f: "$$2^{n^2-n}$$" },
+      { t: "Number of Symmetric Relations", f: "$$2^{\\frac{n(n+1)}{2}}$$" },
+      { t: "Number of Reflexive & Symmetric Relations", f: "$$2^{\\frac{n(n-1)}{2}}$$" }
+    ]
+  },
+}
+// STATE MANAGEMENT
+var currentYear = null;
+var currentSubject = null;
+var currentType = "note";
+var currentUni = "all";
+var currentFormulaTab = "straight_line";
+
+window.cloudPdfs = [
+  { id: '1', n: 'Calculus I Hand Written Note', w: 'তৌহিদ স্যার', c: 'note', u: 'dcu', y: '1', s: 'Calculus I', l: '#', d: 'সম্পূর্ণ ক্যালকুলাস ১ম অধ্যায়ের সলভসহ নোট' }
+];
+
+function g(id){ return document.getElementById(id); }
+function toast(m){ g("tMsg").textContent=m; g("toastD").classList.add("show"); setTimeout(()=>g("toastD").classList.remove("show"),3000); }
+function openA(){ g("aModal").classList.add("open"); }
+function closeA(){ g("aModal").classList.remove("open"); }
+function ic(){ try{ lucide.createIcons(); }catch(e){} }
+
+function changeUni(u){ currentUni = u; renderDriveView(); }
+function goHome(){ currentYear = null; currentSubject = null; renderDriveView(); }
+function selectYear(y){ currentYear = y; currentSubject = null; renderDriveView(); }
+function selectSubject(s){ currentSubject = s; renderDriveView(); }
+function selectType(t){ currentType = t; renderDriveView(); }
+
+function toggleSettings(){ g("settingsBox").classList.toggle("hidden"); }
+
+function saveCredentials(){
+  var e = g("newEmail").value.trim();
+  var p = g("newPass").value.trim();
+  if(e && p){
+    adminCreds.email = e; adminCreds.pass = p;
+    toast("ইমেইল ও পাসওয়ার্ড সফলভাবে আপডেট হয়েছে! 🔑");
+    g("settingsBox").classList.add("hidden");
+  } else {
+    toast("সঠিক ইমেইল ও পাসওয়ার্ড প্রদান করুন!");
+  }
+}
+
+function doLoginDemo(){
+  var e = g("emailInp").value.trim(); var p = g("passInp").value.trim();
+  if(e === adminCreds.email && p === adminCreds.pass){
+    g("logScr").classList.add("hidden");
+    g("dshScr").classList.remove("hidden");
+    toast("অ্যাডমিন এক্সেস গ্রান্টেড! 🔓");
+    rAL();
+  } else {
+    toast("ভুল ইমেইল বা পাসওয়ার্ড দেওয়া হয়েছে!");
+  }
+}
+
+function doLogoutDemo(){
+  g("logScr").classList.remove("hidden");
+  g("dshScr").classList.add("hidden");
+  closeA();
+  toast("লগআউট সম্পন্ন হয়েছে!");
+}
+
+function addLocalPdf(){
+  var n = g("fN").value.trim();
+  var w = g("fW").value.trim();
+  var c = g("fC").value;
+  var u = g("fU").value;
+  var y = g("fY").value;
+  var s = g("fSub").value;
+  var l = g("fL").value.trim();
+  var d = g("fD").value.trim();
+
+  if(!n || !l) { toast("নাম ও ডিরেক্ট লিংক দিন!"); return; }
+
+  window.cloudPdfs.unshift({ id: Date.now().toString(), n, w, c, u, y, s, l, d });
+  g("fN").value = ""; g("fL").value = "";
+  toast("ফাইল যুক্ত করা হয়েছে! 🚀");
+  rAL(); renderDriveView();
+}
+
+function delLocalPdf(id){
+  window.cloudPdfs = window.cloudPdfs.filter(p => p.id !== id);
+  toast("ফাইল মুছে ফেলা হয়েছে!");
+  rAL(); renderDriveView();
+}
+
+function renderBreadcrumb(){
+  var bc = g("breadCrumb");
+  var html = `<button onclick="goHome()" class="flex items-center gap-1.5 text-zinc-400 hover:text-yellow-400 transition-colors"><i data-lucide="hard-drive" class="w-4 h-4 text-yellow-400"></i> মূল ডিরেক্টরি</button>`;
+  if(currentYear){ 
+    var yrText = currentYear === "masters" ? "মাস্টার্স (M.Sc)" : currentYear + "ম বর্ষ";
+    html += `<span class="text-zinc-600">/</span><button onclick="selectYear('${currentYear}')" class="text-zinc-300 hover:text-yellow-400 transition-colors">${yrText}</button>`; 
+  }
+  if(currentSubject){ html += `<span class="text-zinc-600">/</span><span class="text-yellow-400 font-bold">${currentSubject}</span>`; }
+  bc.innerHTML = html; ic();
+}
+
+function renderDriveView(){
+  renderBreadcrumb();
+  var container = g("driveContainer"); container.innerHTML = "";
+
+  if(!currentYear){
+    var grid = document.createElement("div");
+    grid.className = "grid sm:grid-cols-2 lg:grid-cols-5 gap-4";
+    var years = [
+      { y: "1", t: "১ম বর্ষ" },
+      { y: "2", t: "২য় বর্ষ" },
+      { y: "3", t: "৩য় বর্ষ" },
+      { y: "4", t: "৪র্থ বর্ষ" },
+      { y: "masters", t: "মাস্টার্স (M.Sc)" }
+    ];
+
+    years.forEach(item => {
+      var card = document.createElement("div");
+      card.className = "folder-card p-6 rounded-3xl cursor-pointer flex flex-col items-center text-center group";
+      card.onclick = () => selectYear(item.y);
+      card.innerHTML = `
+        <div class="w-14 h-14 rounded-2xl bg-yellow-400/10 flex items-center justify-center mb-3 border border-yellow-500/20 group-hover:scale-110 transition-transform">
+          <i data-lucide="folder" class="w-7 h-7 text-yellow-400 fill-yellow-400/20"></i>
+        </div>
+        <h3 class="font-extrabold text-sm text-white mb-0.5">${item.t}</h3>
+        <p class="text-[10px] text-zinc-400 font-light">Math Honours / Master's</p>`;
+      grid.appendChild(card);
+    });
+    container.appendChild(grid);
+  }
+  else if(currentYear && !currentSubject){
+    var subs = SUBJECTS[currentYear] || [];
+    var grid = document.createElement("div");
+    grid.className = "grid sm:grid-cols-2 lg:grid-cols-3 gap-6";
+    subs.forEach(s => {
+      var card = document.createElement("div");
+      card.className = "folder-card p-5 rounded-3xl cursor-pointer flex items-center gap-4 group";
+      card.onclick = () => selectSubject(s);
+      card.innerHTML = `
+        <div class="w-11 h-11 rounded-2xl bg-orange-400/10 flex items-center justify-center border border-orange-500/20 group-hover:scale-110 transition-transform shrink-0">
+          <i data-lucide="folder-open" class="w-5 h-5 text-orange-400"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-xs sm:text-sm text-white group-hover:text-yellow-400 transition-colors">${s}</h4>
+          <p class="text-[10px] text-zinc-400">ফোল্ডার ব্রাউজ করুন</p>
+        </div>`;
+      grid.appendChild(card);
+    });
+    container.appendChild(grid);
+  }
+  else if(currentYear && currentSubject){
+    var tabsBar = document.createElement("div");
+    tabsBar.className = "flex justify-center gap-2 mb-8 flex-wrap";
+   var types = [
+  { l: "📋 সিলেবাস", v: "syllabus" },
+  { l: "📎 লেকচার নোট", v: "note" },
+  { l: "🎥 ভিডিও লেকচার", v: "video" },
+  { l: "📖 রেফারেন্স বই", v: "book" },
+  { l: "📐 সূত্রপত্র (Formula Sheet)", v: "formula" },
+  { l: "📂 অ্যাসাইনমেন্ট", v: "assignment" },
+  { l: "📝 প্রশ্ন ব্যাংক", v: "question" },
+  { l: "📄 মডেল টেস্ট", v: "model" },
+  { l: "✅ সমাধান (Solution)", v: "solution" }
+];
+    types.forEach(t => {
+      var btn = document.createElement("button");
+      btn.className = "px-4 py-2 rounded-xl text-xs font-bold transition-all border " + (t.v === currentType ? "bg-yellow-400 text-black border-yellow-400 shadow-lg shadow-yellow-400/20" : "glass text-zinc-400 border-white/5 hover:text-white");
+      btn.textContent = t.l; btn.onclick = () => selectType(t.v);
+      tabsBar.appendChild(btn);
+    });
+    container.appendChild(tabsBar);
+
+    var filtered = window.cloudPdfs.filter(p => {
+      return (p.y == currentYear) && (p.s === currentSubject) && (p.c === currentType) && (currentUni === "all" || p.u === "all" || p.u === currentUni);
+    });
+
+    if(!filtered.length){
+      var empty = document.createElement("div");
+      empty.className = "text-center py-12 glass rounded-3xl max-w-md mx-auto border border-white/10";
+      empty.innerHTML = `<i data-lucide="file-x" class="w-10 h-10 text-zinc-600 mx-auto mb-2"></i><h4 class="text-xs font-bold text-zinc-300">এই ক্যাটাগরিতে ফাইল যুক্ত হয়নি</h4><p class="text-[10px] text-zinc-500 mt-1">অ্যাডমিন প্যানেল থেকে খুব শীঘ্রই আপডেট করা হবে</p>`;
+      container.appendChild(empty);
+    } else {
+      var fileGrid = document.createElement("div");
+      fileGrid.className = "grid sm:grid-cols-2 lg:grid-cols-3 gap-6";
+      filtered.forEach(p => {
+        var uniBadge = p.u === 'dcu' ? '🔵 DCU' : (p.u === 'nu' ? '🟢 NU' : '🌐 DCU + NU');
+        var card = document.createElement("div");
+        card.className = "glass p-5 rounded-3xl border border-white/10 flex flex-col justify-between hover:border-yellow-400/40 transition-all";
+        card.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-0.5 rounded-full bg-yellow-400/10 border border-yellow-500/20 text-yellow-400 text-[9px] font-bold uppercase">${uniBadge}</span>
+              ${p.w ? `<span class="px-2.5 py-0.5 rounded-full bg-orange-400/10 border border-orange-500/20 text-orange-400 text-[9px] font-semibold">✍️ ${p.w}</span>` : ''}
+            </div>
+            <h4 class="font-extrabold text-sm text-white mb-1">${p.n}</h4>
+            <p class="text-xs text-zinc-400 mb-5 font-light leading-relaxed">${p.d || 'কোনো সংক্ষিপ্ত বিবরণ নেই'}</p>
+          </div>
+          <a href="${p.l}" target="_blank" class="w-full py-2.5 rounded-xl bg-white/10 hover:bg-yellow-400 hover:text-black transition-all text-xs font-bold text-center flex items-center justify-center gap-2">
+            📄 লিংকটি খুলুন
+          </a>`;
+        fileGrid.appendChild(card);
+      });
+      container.appendChild(fileGrid);
+    }
+  }
+  ic();
+}
+
+function renderFormulaSection(){
+  var tabs = g("formulaTabs"); var container = g("formulaContainer");
+  if(!tabs || !container) return;
+  tabs.innerHTML = ""; container.innerHTML = "";
+
+  Object.keys(FORMULAS).forEach(key => {
+    var item = FORMULAS[key];
+    var btn = document.createElement("button");
+    btn.className = "px-3 py-1.5 rounded-xl text-xs font-bold border transition-all " + (key === currentFormulaTab ? "ta" : "glass text-zinc-400 border-white/5 hover:text-white");
+    btn.textContent = item.title;
+    btn.onclick = () => { currentFormulaTab = key; renderFormulaSection(); };
+    tabs.appendChild(btn);
+  });
+
+  var activeData = FORMULAS[currentFormulaTab] ? FORMULAS[currentFormulaTab].data : [];
+  activeData.forEach(item => {
+    var card = document.createElement("div");
+    card.className = "glass p-5 rounded-3xl border border-white/10 text-center";
+    card.innerHTML = `
+      <h4 class="text-xs font-bold text-zinc-300 mb-3">${item.t}</h4>
+      <div class="bg-[#05070a] border border-white/10 rounded-xl p-3 text-xs sm:text-sm text-yellow-400 font-mono overflow-x-auto">${item.f}</div>`;
+    container.appendChild(card);
+  });
+  ic();
+  if(window.MathJax && window.MathJax.typesetPromise){ MathJax.typesetPromise(); }
+}
+
+function updateAdminSubjectDropdown(){
+  var selYear = g("fY").value;
+  var subSelect = g("fSub"); subSelect.innerHTML = "";
+  var subs = SUBJECTS[selYear] || [];
+  subs.forEach(s => {
+    var opt = document.createElement("option");
+    opt.value = s; opt.textContent = s;
+    subSelect.appendChild(opt);
+  });
+}
+
+function rAL(){
+  const list = g("aList"); if(!list) return; list.innerHTML = "";
+  window.cloudPdfs.forEach(p => {
+    const item = document.createElement("div");
+    item.className = "flex items-center justify-between p-2 rounded-xl bg-white/5 text-xs border border-white/5";
+    item.innerHTML = `
+      <div class="truncate max-w-[200px]">
+        <p class="text-zinc-200 font-bold truncate">${p.n}</p>
+        <p class="text-[10px] text-zinc-400">${p.y} • ${p.s}</p>
+      </div>
+      <button onclick="delLocalPdf('${p.id}')" class="text-red-400 hover:text-red-300 font-bold px-2 py-1">ডিলিট</button>`;
+    list.appendChild(item);
+  });
+}
+
+window.onload = function(){
+  ic();
+  renderDriveView();
+  renderFormulaSection();
+  updateAdminSubjectDropdown();
+};
+</script>
+</body>
+</html>
