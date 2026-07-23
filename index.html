@@ -67,30 +67,34 @@
       <span>🎓</span> <span class="font-bold">Academic Mathematics Repository</span>
     </div>
     <h1 class="text-3xl sm:text-5xl font-black tracking-tight mb-3">
-      ঢাকা কেন্দ্রীয় বিশ্ববিদ্যালয় (DCU) ও জাতীয় বিশ্ববিদ্যালয় (NU) <br><span class="gtxt">সমন্বিত ডিজিটাল ম্যাথ ড্যাশবোর্ড</span>
+      ঢাকা কেন্দ্রীয় বিশ্ববিদ্যালয় (DCU) <br><span class="gtxt"> ডিজিটাল ম্যাথ ড্যাশবোর্ড</span>
     </h1>
     <p class="text-xs sm:text-sm text-zinc-400 max-w-2xl mx-auto leading-relaxed">
       বি.এসসি (অনার্স) ১ম বর্ষ থেকে ৪র্থ বর্ষ এবং এম.এসসি (মাস্টার্স) গণিত বিভাগের সম্পূর্ণ সিলেবাস, নোটস এবং বিষয়ভিত্তিক অল-ইন-ওয়ান ফর্মুলা ব্যাংক।
     </p>
   </section>
 
-  <!-- SECTION 1: DRIVE SYSTEM -->
-  <section id="driveSection" class="mb-20">
-    <div class="glass p-4 rounded-2xl border border-white/10 mb-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-2 text-xs sm:text-sm font-semibold" id="breadCrumb"></div>
+<!-- SECTION 1: DRIVE SYSTEM -->
+<section id="driveSection" class="mb-20">
+  <div class="glass p-4 rounded-2xl border border-white/10 mb-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2 text-xs sm:text-sm font-semibold" id="breadCrumb"></div>
+    
+    <div class="flex items-center gap-2">
+      <span class="text-xs text-zinc-400">বিশ্ববিদ্যালয় :</span>
       
-      <div class="flex items-center gap-2">
-        <span class="text-xs text-zinc-400">বিশ্ববিদ্যালয় ফিল্টার:</span>
-        <select id="uniFilter" onchange="changeUni(this.value)" class="bg-[#07090e] border border-white/10 px-3 py-1.5 rounded-xl text-xs text-yellow-400 focus:outline-none">
-          <option value="all">🌐 উভয় (DCU + NU)</option>
-          <option value="nu">🟢 জাতীয় বিশ্ববিদ্যালয় (NU)</option>
-          <option value="dcu">🔵 ঢাকা কেন্দ্রীয় বিশ্ববিদ্যালয়  (DCU)</option>
-                </select>
-      </div>
+      <select id="uniFilter" onchange="changeUni(this.value)" class="bg-[#07090e] border border-white/10 px-3 py-1.5 rounded-xl text-xs text-yellow-400 focus:outline-none focus:border-yellow-400/50 cursor-pointer">
+        <!-- শুরুতে এটি দেখাবে, কিন্তু ভেতরে গেলে সিলেক্ট করা যাবে না -->
+        <option value="" disabled selected hidden>বিশ্ববিদ্যালয় সিলেক্ট করুন</option>
+        
+        <!-- আসল অপশনগুলো নিচে থাকবে -->
+        <option value="dcu" class="bg-[#07090e] text-white">ঢাকা কেন্দ্রীয় বিশ্ববিদ্যালয় (DCU)</option>
+       
+      </select>
     </div>
+  </div>
 
-    <div id="driveContainer"></div>
-  </section>
+  <div id="driveContainer"></div>
+</section>
 
   <!-- SECTION 2: GYAAN SUTRA FORMULA HUB -->
   <section id="formulaSection" class="pt-12 border-t border-white/10">
@@ -98,7 +102,7 @@
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-400/10 border border-yellow-500/30 text-xs text-yellow-400 mb-2 font-bold">
         <span>📖</span> MATHEMATICS FORMULA BOOKLET 
       </div>
-      <h2 class="text-3xl font-black">বিশ্বের যাবতীয় <span class="gtxt">গাণিতিক সূত্রাবলী ও নিয়মাবলী</span></h2>
+      <h2 class="text-3xl font-black"><span class="gtxt">গাণিতিক সূত্রাবলী ও নিয়মাবলী</span></h2>
       <p class="text-xs text-zinc-400 mt-1">ক্যালকুলাস, জ্যামিতি, বীজগণিত, ভেক্টর, ত্রিকোণমিতি এবং পরিসংখ্যানের সব চ্যাপ্টারের মূল সূত্র</p>
     </div>
 
@@ -109,7 +113,7 @@
 </main>
 
 <footer class="border-t border-white/10 py-8 bg-[#07090e] text-center text-xs text-zinc-500">
-  © ২০২৬ MATH MISSION
+  © 2026 MATH MISSION
 </footer>
 
 <!-- ADMIN MODAL -->
@@ -164,9 +168,9 @@
             <option value="model">📄 মডেল টেস্ট</option>
           </select>
           <select id="fU" class="bg-[#07090e] border border-white/10 p-2 rounded-xl text-xs text-white">
-            <option value="all">🌐 উভয় (DCU + NU)</option>
-            <option value="dcu">🔵 ঢাকা কেন্দ্রীয় বিশ্ববিদ্যালয় (DCU)</option>
-            <option value="nu">🟢 জাতীয় বিশ্ববিদ্যালয় (NU)</option>
+          
+            <option value="dcu"> ঢাকা কেন্দ্রীয় বিশ্ববিদ্যালয় (DCU)</option>
+           
           </select>
         </div>
 
@@ -204,11 +208,11 @@ var adminCreds = {
 
 // 1. SUBJECT ARCHITECTURE
 var SUBJECTS = {
-  1: ["Calculus I", "Linear Algebra", "Analytic & Vector Geometry", "Algebra & Trigonometry", "Physics-I"],
-  2: ["Calculus II", "Ordinary Differential Equations", "Real Analysis I", "Abstract Algebra", "Fortran & Numerical Programming"],
-  3: ["Complex Analysis", "Real Analysis II", "Classical Mechanics", "Topology", "Numerical Analysis", "Mathematical Methods"],
-  4: ["Partial Differential Equations", "Functional Analysis", "Differential Geometry", "Fluid Dynamics", "Tensor Analysis", "Applied Optimization"],
-  "masters": ["Advanced Functional Analysis", "Fluid Dynamics II", "Measure Theory", "Quantum Mechanics", "Graph Theory", "Mathematical Biology"]
+  1: ["Fundamentals of Mathematics","Differential Calculus","Analytic Geometry","Linear Algebra","Integral Calculus","Principle of microeconomics","Principle of macroeconomics","Introduction to Statistics", "History of Emergence of Independent Bangladesh", "Math Lab I (MATHEMATICA)"],
+  2: ["Real Analysis I", "Differential Calculus II", "Ordinary Differential Equations I", "Linear Algebra II", "Integral Calculus II", "Numerical Analysis I", "Programming Fundamentals","Mathematical Economics", "Economy of Bangladesh", "Mathematical Statistics", "Principles of Statistics", "Math Lab II (MATLAB)"],
+  3: ["Real Analysis II", "Complex Analysis", "Ordinary Differential Equations II", "Abstract Algebra I : Theory of Groups", "Fundamentals of Topology", "Numerical Analysis II", "Mathematical Methods", "Optimizations", "Discrete Mathematics", "Math Lab III (FORTRAN)"],
+  4: ["Theory of Numbers", "Hydrodynamics", "Partial Differential Equations", "Tensor Analysis", "Functional Analysis", "Discrete Mathematics", "Fuzzy Mathematics", "Topology", "Astronomy", "Mathematical Modeling in Biology", "Math Lab IV (Mathematica)"],
+  "masters": ["Theory Of Rings And Modules", "Advanced Number Theory", "Differential And Integral Equations", "Geometry Of Differential Manifolds", "Theory Of Relativity", "Fluid Dynamics", "Quantum Mechanics"]
 };
 
 // 2. COMPLETE ALL 24 FORMULA CHAPTERS
@@ -424,7 +428,6 @@ def_int: {
   ]
 },
 
-
 fom: {
   title: "11. Fundamentals of Math",
   data: [
@@ -453,7 +456,6 @@ fom: {
   ]
 },
 
-
 quadratic: {
   title: "12. Quadratic Equations",
   data: [
@@ -475,7 +477,6 @@ quadratic: {
   ]
 },
 
-
 sequence: {
   title: "13. Sequence & Series",
   data: [
@@ -495,7 +496,6 @@ sequence: {
   ]
 },
 
-
 binomial: {
   title: "14. Binomial Theorem",
   data: [
@@ -513,7 +513,6 @@ binomial: {
   ]
 },
 
-
 pnc: {
   title: "15. Permutation & Combination",
   data: [
@@ -530,7 +529,6 @@ pnc: {
     { t: "Dearrangement Formula", f: "$$D_n = n!\\left(1 - \\frac{1}{1!}+\\frac{1}{2!}-\\frac{1}{3!}+\\cdots+\\frac{(-1)^n}{n!}\\right)$$" }
   ]
 },
-
 
 probability: {
   title: "16. Probability",
@@ -553,7 +551,6 @@ probability: {
   ]
 },
 
-
 complex: {
   title: "17. Complex Numbers",
   data: [
@@ -573,7 +570,6 @@ complex: {
     { t: "Locus: Circle", f: "$$\\left|\\frac{z-z_1}{z-z_2}\\right| = k \\neq 1,0 \\implies \\text{circle}$$" }
   ]
 },
-
 
 vectors: {
   title: "18. Vectors",
@@ -602,7 +598,6 @@ vectors: {
     { t: "Vector Triple Product", f: "$$\\vec{a}\\times(\\vec{b}\\times\\vec{c}) = (\\vec{a}\\cdot\\vec{c})\\vec{b}-(\\vec{a}\\cdot\\vec{b})\\vec{c}$$ $$(\\vec{a}\\times\\vec{b})\\times\\vec{c} = (\\vec{a}\\cdot\\vec{c})\\vec{b}-(\\vec{b}\\cdot\\vec{c})\\vec{a}$$" }
   ]
 },
-
 
 three_d: {
   title: "19. 3-D Geometry",
@@ -849,15 +844,33 @@ function delLocalPdf(id){
   rAL(); renderDriveView();
 }
 
-function renderBreadcrumb(){
+// বর্ষের নাম সুন্দরভাবে বাংলায় ফরম্যাট করার হেলপার ফাংশন
+function formatYearBn(year) {
+  var yearMap = {
+    "1": "১ম বর্ষ",
+    "2": "২য় বর্ষ",
+    "3": "৩য় বর্ষ",
+    "4": "৪র্থ বর্ষ",
+    "masters": "মাস্টার্স (M.Sc)"
+  };
+  return yearMap[year] || (year + " বর্ষ");
+}
+
+function renderBreadcrumb() {
   var bc = g("breadCrumb");
   var html = `<button onclick="goHome()" class="flex items-center gap-1.5 text-zinc-400 hover:text-yellow-400 transition-colors"><i data-lucide="hard-drive" class="w-4 h-4 text-yellow-400"></i> মূল ডিরেক্টরি</button>`;
-  if(currentYear){ 
-    var yrText = currentYear === "masters" ? "মাস্টার্স (M.Sc)" : currentYear + "ম বর্ষ";
+  
+  if (currentYear) { 
+    var yrText = formatYearBn(currentYear);
     html += `<span class="text-zinc-600">/</span><button onclick="selectYear('${currentYear}')" class="text-zinc-300 hover:text-yellow-400 transition-colors">${yrText}</button>`; 
   }
-  if(currentSubject){ html += `<span class="text-zinc-600">/</span><span class="text-yellow-400 font-bold">${currentSubject}</span>`; }
-  bc.innerHTML = html; ic();
+  
+  if (currentSubject) { 
+    html += `<span class="text-zinc-600">/</span><span class="text-yellow-400 font-bold">${currentSubject}</span>`; 
+  }
+  
+  bc.innerHTML = html; 
+  ic();
 }
 
 function renderDriveView(){
@@ -917,11 +930,11 @@ function renderDriveView(){
   { l: "📎 লেকচার নোট", v: "note" },
   { l: "🎥 ভিডিও লেকচার", v: "video" },
   { l: "📖 রেফারেন্স বই", v: "book" },
-  { l: "📐 সূত্রপত্র (Formula Sheet)", v: "formula" },
+  { l: "📐 সূত্রপত্র ", v: "formula" },
   { l: "📂 অ্যাসাইনমেন্ট", v: "assignment" },
   { l: "📝 প্রশ্ন ব্যাংক", v: "question" },
   { l: "📄 মডেল টেস্ট", v: "model" },
-  { l: "✅ সমাধান (Solution)", v: "solution" }
+  { l: "✅ সমাধান ", v: "solution" }
 ];
     types.forEach(t => {
       var btn = document.createElement("button");
