@@ -2413,7 +2413,7 @@
     };
 
     // ---- অটো Drive অ্যাক্সেস (Google Apps Script — ফ্রি): DRIVE_AUTO_URL ফাঁকা থাকলে বন্ধ ----
-    window.DRIVE_AUTO_URL = window.DRIVE_AUTO_URL || "https://script.google.com/macros/s/AKfycbxOP7tC4wjHgFKhzRMNCgEzNjyKXEUQKWZPkdRiCJFWjsUI4hsfBvKQoxuL8jOddF-CnQ/exec";
+    window.DRIVE_AUTO_URL = window.DRIVE_AUTO_URL || "";
     window.driveSync = async function(action, d){
       if(!window.DRIVE_AUTO_URL) return { skipped: true };
       try{
